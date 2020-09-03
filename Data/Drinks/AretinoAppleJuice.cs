@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks {
-    class AretinoAppleJuice {
+    public class AretinoAppleJuice {
         public double Price { get; set; }
         public uint Calories { get; set; }
 
