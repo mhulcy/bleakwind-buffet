@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entree {
-    class SmokehouseSkeleton {
+    public class SmokehouseSkeleton {
         public double Price { get; set; }
         public uint Calories { get; set; }
         public List<String> SpecialInstructions { get; set; }

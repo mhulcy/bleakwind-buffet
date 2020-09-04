@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides {
-    class MadOtarGrits {
+    public class MadOtarGrits {
         public double Price { get; set; }
         public uint Calories { get; set; }
         private Size size;

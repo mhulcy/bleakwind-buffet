@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides {
-    class VokunSalad {
+    public class VokunSalad {
         private double Price { get; set; }
         private uint Calories { get; set; }
         private Size size;
