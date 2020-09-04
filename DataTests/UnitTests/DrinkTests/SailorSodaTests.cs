@@ -6,7 +6,7 @@
 using System;
 
 using Xunit;
-
+using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 
@@ -17,11 +17,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldIncludeIceByDefault()
         {
+            SailorSoda s = new SailorSoda();
+            Assert.True(s.Ice);
         }
 
         [Fact]
         public void ShouldBeSmallByDefault()
         {
+            SailorSoda s = new SailorSoda();
+            Assert.Equal(Size.Small, s.Size);
         }
 
         [Fact]
