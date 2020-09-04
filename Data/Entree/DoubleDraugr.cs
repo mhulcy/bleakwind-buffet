@@ -40,6 +40,7 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold mustard");
             }
         }
+
         public bool Pickle {
             get { return pickle; }
             set {
@@ -81,6 +82,10 @@ namespace BleakwindBuffet.Data.Entree {
             }
         }
       
+        /// <summary>
+        /// Constructor for doubleDraugr
+        /// Sets up the defualt values
+        /// </summary>
         public DoubleDraugr() {
             SpecialInstructions = new List<String>();
             Price = 7.32;
