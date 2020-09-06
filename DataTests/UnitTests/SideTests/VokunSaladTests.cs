@@ -7,24 +7,33 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Sides;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class VokunSaladTests
     {
         [Fact]
-        public void ShouldBeSmallByDefault()
-        {
+        public void ShouldBeSmallByDefault() {
+            var side = new VolkunSalad();
+            Assert.Equal(Size.Small, side.Size);
         }
 
         [Fact]
-        public void ShouldBeAbleToSetSize()
-        {
+        public void ShouldBeAbleToSetSize() {
+            var side = new VolkunSalad();
+            side.Size = Size.Small;
+            Assert.Equal(side.Size, Size.Small);
+            side.Size = Size.Medium;
+            Assert.Equal(side.Size, Size.Medium);
+            side.Size = Size.Large;
+            Assert.Equal(side.Size, Size.Large);
         }
 
         [Fact]
-        public void ShouldReturnCorrectSpecialInstructions()
-        {
+        public void ShouldReturnCorrectSpecialInstructions() {
+            var side = new VolkunSalad();
+            Assert.Empty(side.SpecialInstructions);
         }
 
         [Theory]
@@ -33,6 +42,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, 1.82)]
         public void ShouldReturnCorrectPriceBasedOnSize(Size size, double price)
         {
+            var side = new VolkunSalad();
+            side.Size = size;
+            Assert.Equal(price, side.Price);
         }
 
         [Theory]
@@ -41,6 +53,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, 73)]
         public void ShouldReturnCorrectCaloriesBasedOnSize(Size size, uint calories)
         {
+            var side = new VolkunSalad();
+            side.Size = size;
+            Assert.Equal(calories, side.Calories);
         }
 
         [Theory]
@@ -49,6 +64,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, "Large Vokun Salad")]
         public void ShouldReturnCorrectToStringBasedOnSize(Size size, string name)
         {
+            var side = new VolkunSalad();
+            side.Size = size;
+            Assert.Equal(name, side.ToString());
         }
     }
 }

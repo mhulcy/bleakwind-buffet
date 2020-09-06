@@ -4,8 +4,18 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entree {
     public class GardenOrcOmlette {
+
+        /// <summary>
+        /// price of the omlette
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// calories of the omlette
+        /// </summary>
         public uint Calories { get; set; }
+        /// <summary>
+        /// list of special preperation instructions
+        /// </summary>
         public List<String> SpecialInstructions { get; set; }
 
         private bool broccoli;
@@ -13,7 +23,9 @@ namespace BleakwindBuffet.Data.Entree {
         private bool tomato;
         private bool cheddar;
         
-       
+       /// <summary>
+       /// if the omlette should have broccoli
+       /// </summary>
         public bool Broccoli {
             get { return broccoli; }
             set {
@@ -22,14 +34,20 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold broccoli");
             }
         }
+        /// <summary>
+        /// if the omlette should have mushrooms
+        /// </summary>
         public bool Mushrooms {
             get { return mushrooms; }
             set {
-                Mushrooms = value;
+                mushrooms = value;
                 if (!value)
                     SpecialInstructions.Add("Hold mushrooms");
             }
         }
+        /// <summary>
+        /// if the omlette should have tomato
+        /// </summary>
         public bool Tomato {
             get { return tomato; }
             set {
@@ -38,6 +56,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold tomato");
             }
         }
+        /// <summary>
+        /// if the omlette should have cheddar cheese
+        /// </summary>
         public bool Cheddar {
             get { return cheddar; }
             set {
@@ -47,6 +68,9 @@ namespace BleakwindBuffet.Data.Entree {
             }
         }
 
+        /// <summary>
+        /// constructor to setup defualt values
+        /// </summary>
         public GardenOrcOmlette() {
             SpecialInstructions = new List<String>();
             Price = 4.57;
@@ -57,6 +81,10 @@ namespace BleakwindBuffet.Data.Entree {
             Broccoli = true;
         }
 
+        /// <summary>
+        /// turns omlette to a string
+        /// </summary>
+        /// <returns>omlette as a string</returns>
         public override String ToString() {
             return "Garden Orc Omlette";
         }

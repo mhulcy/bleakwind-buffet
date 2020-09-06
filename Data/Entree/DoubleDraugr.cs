@@ -4,8 +4,17 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entree {
     public class DoubleDraugr {
+        /// <summary>
+        /// price of a double burger
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// calories of a double burger
+        /// </summary>
         public uint Calories { get; set; }
+        /// <summary>
+        /// list of special preperation instructions
+        /// </summary>
         public List<String> SpecialInstructions { get; set; }
 
         private bool bun;
@@ -16,6 +25,9 @@ namespace BleakwindBuffet.Data.Entree {
         private bool tomato;
         private bool lettuce;
         private bool mayo;
+        /// <summary>
+        /// if the burger should have a bun
+        /// </summary>
         public bool Bun {
             get { return bun; }
             set {
@@ -24,6 +36,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold bun");
             }
         }
+        /// <summary>
+        /// if the burger should have ketchup
+        /// </summary>
         public bool Ketchup {
             get { return ketchup; }
             set {
@@ -32,6 +47,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold ketchup");
             }
         }
+        /// <summary>
+        /// if the burger should have mustard
+        /// </summary>
         public bool Mustard {
             get { return mustard; }
             set {
@@ -40,7 +58,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold mustard");
             }
         }
-
+        /// <summary>
+        /// if the burger should have pickles
+        /// </summary>
         public bool Pickle {
             get { return pickle; }
             set {
@@ -49,6 +69,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold pickle");
             }
         }
+        /// <summary>
+        /// if the burger should have cheese
+        /// </summary>
         public bool Cheese {
             get { return cheese; }
             set {
@@ -57,6 +80,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold cheese");
             }
         }
+        /// <summary>
+        /// if the burger should have tomato
+        /// </summary>
         public bool Tomato {
             get { return tomato; }
             set {
@@ -65,6 +91,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold tomato");
             }
         }
+        /// <summary>
+        /// if the burger should have lettuce
+        /// </summary>
         public bool Lettuce {
             get { return lettuce; }
             set {
@@ -73,6 +102,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold lettuce");
             }
         }
+        /// <summary>
+        /// if the burger should have mayo
+        /// </summary>
         public bool Mayo {
             get { return mayo; }
             set {
@@ -99,7 +131,10 @@ namespace BleakwindBuffet.Data.Entree {
             Lettuce = true;
             Mayo = true;
         }
-
+        /// <summary>
+        /// turns the burger to a string
+        /// </summary>
+        /// <returns>burger as a string</returns>
         public override String ToString() {
             return "Double Draugr";
         }

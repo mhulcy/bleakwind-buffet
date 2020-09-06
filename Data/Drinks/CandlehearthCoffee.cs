@@ -5,14 +5,46 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks {
     public class CandlehearthCoffee {
+        private bool decaf;
+        private bool roomForCream;
+        /// <summary>
+        /// price of coffee
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// calories of coffee
+        /// </summary>
         public uint Calories { get; set; }
 
-        public bool RoomForCream { get; set; }
-        public bool Decaf { get; set; }
+        /// <summary>
+        /// if they should leave room for cream
+        /// </summary>
+        public bool RoomForCream {
+            get { return roomForCream; }
+            set {
+                roomForCream = value;
+                if (value)
+                    SpecialInstructions.Add("Save room for cream");
+            }
+        }
+        /// <summary>
+        /// if the coffee should be decaf
+        /// </summary>
+        public bool Decaf {
+            get { return decaf; }
+            set {
+                decaf = value;
+                if (value)
+                    SpecialInstructions.Add("Decaf");
+            }
+        }
 
         private bool ice;
         private Size size;
+
+        /// <summary>
+        /// size of the coffee as a Size enum
+        /// </summary>
         public Size Size {
             get { return size; }
             set {
@@ -33,6 +65,9 @@ namespace BleakwindBuffet.Data.Drinks {
                 }
             }
         }
+        /// <summary>
+        /// if they should add ice to the coffee
+        /// </summary>
         public bool Ice {
             get { return ice; }
             set {
@@ -41,8 +76,14 @@ namespace BleakwindBuffet.Data.Drinks {
                     SpecialInstructions.Add("Add ice");
             }
         }
+        /// <summary>
+        /// list of special preperation instructions
+        /// </summary>
         public List<String> SpecialInstructions { get; set; }
 
+        /// <summary>
+        /// constructor to setup defualt values
+        /// </summary>
         public CandlehearthCoffee() {
             SpecialInstructions = new List<String>();
             Price = 1.05;
@@ -52,7 +93,10 @@ namespace BleakwindBuffet.Data.Drinks {
             RoomForCream = false;
             Decaf = false;
         }
-
+        /// <summary>
+        /// turns the coffee into a string
+        /// </summary>
+        /// <returns>a string for coffee</returns>
         public override string ToString() {
             if (Decaf)
                 return Size + " Decaf Candlehearth Coffee";

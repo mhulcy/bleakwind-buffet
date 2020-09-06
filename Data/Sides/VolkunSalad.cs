@@ -4,11 +4,20 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides {
-    public class VokunSalad {
-        private double Price { get; set; }
-        private uint Calories { get; set; }
+    public class VolkunSalad {
+        /// <summary>
+        /// price of salad
+        /// </summary>
+        public double Price { get; set; }
+        /// <summary>
+        /// calories of salad
+        /// </summary>
+        public uint Calories { get; set; }
         private Size size;
-        private Size Size {
+        /// <summary>
+        /// size of salad as Size enum
+        /// </summary>
+        public Size Size {
             get { return size; }
             set {
                 if (value == Size.Small) {
@@ -28,15 +37,23 @@ namespace BleakwindBuffet.Data.Sides {
                 }
             }
         }
-       
-        private List<String> SpecialInstructions { get; set; }
 
-        public VokunSalad() {
+        /// <summary>
+        /// list of special preperation instructions
+        /// </summary>
+        public List<String> SpecialInstructions { get; set; }
+        /// <summary>
+        /// constructor to setup defualt values
+        /// </summary>
+        public VolkunSalad() {
             SpecialInstructions = new List<String>();
             size = Size.Small;
             
         }
-
+        /// <summary>
+        /// turns salad to a string
+        /// </summary>
+        /// <returns>salad as a string</returns>
         public override string ToString() {
             return Size + " Vokun Salad";
         }

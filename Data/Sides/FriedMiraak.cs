@@ -4,11 +4,20 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides {
-    public class FriedMirak {
+    public class FriedMiraak {
+        /// <summary>
+        /// price of hashbrowns
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// calories of hashbrowns
+        /// </summary>
         public uint Calories { get; set; }
-
+        ///
         private Size size;
+        /// <summary>
+        /// size of hashbrowns as Size enum
+        /// </summary>
         public Size Size {
             get { return size; }
             set {
@@ -30,16 +39,24 @@ namespace BleakwindBuffet.Data.Sides {
             }
         }
 
+        /// <summary>
+        /// list of special preperation instructions
+        /// </summary>
         public List<String> SpecialInstructions { get; set; }
-
-        public FriedMirak() {
+        /// <summary>
+        /// constructor to setup defualt values
+        /// </summary>
+        public FriedMiraak() {
             SpecialInstructions = new List<String>();
             size = Size.Small;
 
         }
-
+        /// <summary>
+        /// turns hashbrowns to a string
+        /// </summary>
+        /// <returns>hashbrowns as a string</returns>
         public override string ToString() {
-            return Size + " Fried Mirak";
+            return Size + " Fried Miraak";
         }
     }
 }

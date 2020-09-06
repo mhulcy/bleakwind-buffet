@@ -5,16 +5,30 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks {
     public class AretinoAppleJuice {
+        /// <summary>
+        /// price of the apple juice
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// calories of the apple juice
+        /// </summary>
         public uint Calories { get; set; }
+
+        /// <summary>
+        /// list of special instructions
+        /// </summary>
+        public List<String> SpecialInstructions { get; set; }
 
         private bool ice;
         private Size size;
+        /// <summary>
+        /// size of the apple juice as a Size enum
+        /// </summary>
         public Size Size {
             get { return size; }
             set {
                 if (value == Size.Small) {
-                    Price = 0.63;
+                    Price = 0.62;
                     Calories = 44;
                     size = Size.Small;
                 }
@@ -30,6 +44,9 @@ namespace BleakwindBuffet.Data.Drinks {
                 }
             }
         }
+        /// <summary>
+        /// if the apple juice has ice or not
+        /// </summary>
         public bool Ice {
             get { return ice; }
             set {
@@ -38,8 +55,11 @@ namespace BleakwindBuffet.Data.Drinks {
                     SpecialInstructions.Add("Add ice");
             }
         }
-        public List<String> SpecialInstructions { get; set; }
+        
 
+        /// <summary>
+        /// constructor to set defualt values
+        /// </summary>
         public AretinoAppleJuice() {
             SpecialInstructions = new List<String>();
             Price = 0.62;
@@ -48,6 +68,10 @@ namespace BleakwindBuffet.Data.Drinks {
             Ice = false;
         }
 
+        /// <summary>
+        /// turns the apple juice into a string
+        /// </summary>
+        /// <returns>size apple juice</returns>
         public override string ToString() {
             return Size + " Aretino Apple Juice";
         }

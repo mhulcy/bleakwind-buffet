@@ -5,10 +5,20 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks {
     public class WarriorWater {
+        /// <summary>
+        /// price of water
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// calories of water
+        /// </summary>
         public uint Calories { get; set; }
         private bool ice;
         private Size size;
+
+        /// <summary>
+        /// size of water as Size enum
+        /// </summary>
         public Size Size {
             get { return size; }
             set {
@@ -29,6 +39,9 @@ namespace BleakwindBuffet.Data.Drinks {
                 }
             }
         }
+        /// <summary>
+        /// if the water should have ice
+        /// </summary>
         public bool Ice {
             get { return ice; }
             set {
@@ -37,6 +50,9 @@ namespace BleakwindBuffet.Data.Drinks {
                     SpecialInstructions.Add("Hold ice");
             }
         }
+        /// <summary>
+        /// if the water should have a lemon
+        /// </summary>
         public bool Lemon {
             get { return Lemon; }
             set {
@@ -45,7 +61,13 @@ namespace BleakwindBuffet.Data.Drinks {
                     SpecialInstructions.Add("add lemon");
             }
         }
+        /// <summary>
+        /// list of special preperation instructions
+        /// </summary>
         public List<String> SpecialInstructions { get; set; }
+        /// <summary>
+        /// constructor to setup defualt values
+        /// </summary>
 
         public WarriorWater() {
             SpecialInstructions = new List<String>();
@@ -55,6 +77,10 @@ namespace BleakwindBuffet.Data.Drinks {
             Ice = true;
             Lemon = false;
         }
+        /// <summary>
+        /// turns the water to a string
+        /// </summary>
+        /// <returns>a string for water</returns>
         public override string ToString() {
             return Size + " Warrior Water";
         }

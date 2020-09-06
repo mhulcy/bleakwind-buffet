@@ -5,12 +5,24 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks {
     public class SailorSoda {
+        /// <summary>
+        /// price of soda
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// calories of soda
+        /// </summary>
         public uint Calories { get; set; }
 
         private bool ice;
         private Size size;
+        /// <summary>
+        /// flavor of soda as SodaFlavor enum
+        /// </summary>
         public SodaFlavor Flavor { get; set; }
+        /// <summary>
+        /// size of soda as Size enum
+        /// </summary>
         public Size Size {
             get { return size; }
             set {
@@ -31,6 +43,9 @@ namespace BleakwindBuffet.Data.Drinks {
                 }
             }
         }
+        /// <summary>
+        /// if the soda should have ice
+        /// </summary>
         public bool Ice {
             get { return ice; }
             set {
@@ -39,8 +54,14 @@ namespace BleakwindBuffet.Data.Drinks {
                     SpecialInstructions.Add("Hold ice");
             }
         }
+        /// <summary>
+        /// list of special preperation instructions
+        /// </summary>
         public List<String> SpecialInstructions { get; set; }
 
+        /// <summary>
+        /// constructor to setup defualt values
+        /// </summary>
         public SailorSoda() {
             SpecialInstructions = new List<String>();
             Price = 1.42;
@@ -49,6 +70,10 @@ namespace BleakwindBuffet.Data.Drinks {
             Ice = true;
             Flavor = SodaFlavor.Cherry;
         }
+        /// <summary>
+        /// turns the soda to a string
+        /// </summary>
+        /// <returns>a string for soda</returns>
         public override string ToString() {
             return Size + " " + Flavor + " Sailor Soda";
         }

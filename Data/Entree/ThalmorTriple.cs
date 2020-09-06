@@ -3,9 +3,18 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entree {
-    public class ThalmoreTriple {
+    public class ThalmorTriple {
+        /// <summary>
+        /// price of triple burger
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// calories of triple burger
+        /// </summary>
         public uint Calories { get; set; }
+        /// <summary>
+        /// list of special preperation instructions
+        /// </summary>
         public List<String> SpecialInstructions { get; set; }
 
         private bool bun;
@@ -18,6 +27,9 @@ namespace BleakwindBuffet.Data.Entree {
         private bool mayo;
         private bool bacon;
         private bool egg;
+        /// <summary>
+        /// if the triple burger should have a bun
+        /// </summary>
         public bool Bun {
             get { return bun; }
             set {
@@ -26,6 +38,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold bun");
             }
         }
+        /// <summary>
+        /// if the triple burger should have ketchup
+        /// </summary>
         public bool Ketchup {
             get { return ketchup; }
             set {
@@ -34,6 +49,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold ketchup");
             }
         }
+        /// <summary>
+        /// if the triple burger should have mustard
+        /// </summary>
         public bool Mustard {
             get { return mustard; }
             set {
@@ -42,6 +60,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold mustard");
             }
         }
+        /// <summary>
+        /// if the triple burger should have pickle
+        /// </summary>
         public bool Pickle {
             get { return pickle; }
             set {
@@ -50,6 +71,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold pickle");
             }
         }
+        /// <summary>
+        /// if the triple burger should have cheese
+        /// </summary>
         public bool Cheese {
             get { return cheese; }
             set {
@@ -58,6 +82,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold cheese");
             }
         }
+        /// <summary>
+        /// if the triple burger should have tomato
+        /// </summary>
         public bool Tomato {
             get { return tomato; }
             set {
@@ -66,6 +93,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold tomato");
             }
         }
+        /// <summary>
+        /// if the triple burger should have lettuce
+        /// </summary>
         public bool Lettuce {
             get { return lettuce; }
             set {
@@ -74,6 +104,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold lettuce");
             }
         }
+        /// <summary>
+        /// if the triple burger should have mayo
+        /// </summary>
         public bool Mayo {
             get { return mayo; }
             set {
@@ -82,6 +115,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold mayo");
             }
         }
+        /// <summary>
+        /// if the triple burger should have bacon
+        /// </summary>
         public bool Bacon {
             get { return bacon; }
             set {
@@ -90,6 +126,9 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold bacon");
             }
         }
+        /// <summary>
+        /// if the triple burger should have egg
+        /// </summary>
         public bool Egg {
             get { return egg; }
             set {
@@ -98,7 +137,10 @@ namespace BleakwindBuffet.Data.Entree {
                     SpecialInstructions.Add("Hold egg");
             }
         }
-        public ThalmoreTriple() {
+        /// <summary>
+        /// constructor to setup defualt values
+        /// </summary>
+        public ThalmorTriple() {
             SpecialInstructions = new List<String>();
             Price = 8.32;
             Calories = 943;
@@ -113,7 +155,10 @@ namespace BleakwindBuffet.Data.Entree {
             Bacon = true;
             Egg = true;
         }
-
+        /// <summary>
+        /// turns triplke burger to a string
+        /// </summary>
+        /// <returns>triple burger as a string</returns>
         public override String ToString() {
             return "Thalmore Triple";
         }
