@@ -1,8 +1,4 @@
 ﻿using Xunit;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
@@ -35,11 +31,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests {
         public void ShouldBeAbleToSetSize() {
             var drink = new WarriorWater();
             drink.Size = Size.Small;
-            Assert.Equal(drink.Size, Size.Small);
+            Assert.Equal(Size.Small, drink.Size);
             drink.Size = Size.Medium;
-            Assert.Equal(drink.Size, Size.Medium);
+            Assert.Equal(Size.Medium, drink.Size);
             drink.Size = Size.Large;
-            Assert.Equal(drink.Size, Size.Large);
+            Assert.Equal(Size.Large, drink.Size);
         }
 
         [Theory]

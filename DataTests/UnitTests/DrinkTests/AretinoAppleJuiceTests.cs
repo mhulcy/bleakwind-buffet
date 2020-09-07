@@ -24,7 +24,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ShouldBeSmallByDefault()
         {
             var juice = new AretinoAppleJuice();
-            Assert.Equal(juice.Size, Size.Small);
+            Assert.Equal(Size.Small, juice.Size);
         }
 
         [Fact]
@@ -42,11 +42,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         {
             var juice = new AretinoAppleJuice();
             juice.Size = Size.Small;
-            Assert.Equal(juice.Size, Size.Small);
+            Assert.Equal(Size.Small, juice.Size);
             juice.Size = Size.Medium;
-            Assert.Equal(juice.Size, Size.Medium);
+            Assert.Equal(Size.Medium, juice.Size);
             juice.Size = Size.Large;
-            Assert.Equal(juice.Size, Size.Large);
+            Assert.Equal(Size.Large, juice.Size);
         }
 
         [Theory]
