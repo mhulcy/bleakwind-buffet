@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides {
-    public class DragonbornWaffleFries {
+    public class DragonbornWaffleFries : Side, IOrderItem {
         /// <summary>
         /// price of fries
         /// </summary>
@@ -47,7 +47,14 @@ namespace BleakwindBuffet.Data.Sides {
         public DragonbornWaffleFries() {
             SpecialInstructions = new List<String>();
             size = Size.Small;
-
+        }
+        /// <summary>
+        /// contructor to set size
+        /// </summary>
+        /// <param name="inpsize">input size</param>
+        public DragonbornWaffleFries(Size inpsize) {
+            SpecialInstructions = new List<String>();
+            size = inpsize;
         }
         /// <summary>
         /// turns fries to a string

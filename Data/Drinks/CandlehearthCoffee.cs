@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks {
-    public class CandlehearthCoffee {
+    public class CandlehearthCoffee : Drink, IOrderItem {
         private bool decaf;
         private bool roomForCream;
         /// <summary>
@@ -88,6 +88,19 @@ namespace BleakwindBuffet.Data.Drinks {
             SpecialInstructions = new List<String>();
             Price = 1.05;
             size = Size.Small;
+            Calories = 56;
+            Ice = false;
+            RoomForCream = false;
+            Decaf = false;
+        }
+        /// <summary>
+        /// constructor to set size
+        /// </summary>
+        /// <param name="inpsize">input size</param>
+        public CandlehearthCoffee(Size inpsize) {
+            SpecialInstructions = new List<String>();
+            Price = 1.05;
+            size = inpsize;
             Calories = 56;
             Ice = false;
             RoomForCream = false;

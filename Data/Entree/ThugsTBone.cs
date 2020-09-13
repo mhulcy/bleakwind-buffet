@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entree {
-    public class ThugsTBone {
+    public class ThugsTBone : Entree, IOrderItem {
         /// <summary>
         /// price of TBone
         /// </summary>

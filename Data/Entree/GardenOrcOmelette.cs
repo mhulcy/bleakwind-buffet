@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entree {
-    public class GardenOrcOmlette {
+    public class GardenOrcOmlette : Entree, IOrderItem {
 
         /// <summary>
         /// price of the omlette

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks {
-    public class AretinoAppleJuice {
+    public class AretinoAppleJuice : Drink, IOrderItem{
         /// <summary>
         /// price of the apple juice
         /// </summary>
@@ -64,6 +64,17 @@ namespace BleakwindBuffet.Data.Drinks {
             SpecialInstructions = new List<String>();
             Price = 0.62;
             size = Size.Small;
+            Calories = 44;
+            Ice = false;
+        }
+        /// <summary>
+        /// constructor to set size
+        /// </summary>
+        /// <param name="inpsize">input size</param>
+        public AretinoAppleJuice(Size inpsize) {
+            SpecialInstructions = new List<String>();
+            Price = 0.62;
+            size = inpsize;
             Calories = 44;
             Ice = false;
         }

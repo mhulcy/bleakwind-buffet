@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides {
-    public class FriedMiraak {
+    public class FriedMiraak : Side, IOrderItem {
         /// <summary>
         /// price of hashbrowns
         /// </summary>
@@ -50,6 +50,14 @@ namespace BleakwindBuffet.Data.Sides {
             SpecialInstructions = new List<String>();
             size = Size.Small;
 
+        }
+        /// <summary>
+        /// contructor to set size
+        /// </summary>
+        /// <param name="inpsize">input size</param>
+        public FriedMiraak(Size inpsize) {
+            SpecialInstructions = new List<String>();
+            size = inpsize;
         }
         /// <summary>
         /// turns hashbrowns to a string

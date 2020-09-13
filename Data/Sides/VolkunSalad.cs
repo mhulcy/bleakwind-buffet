@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides {
-    public class VolkunSalad {
+    public class VolkunSalad : Side, IOrderItem {
         /// <summary>
         /// price of salad
         /// </summary>
@@ -49,6 +49,14 @@ namespace BleakwindBuffet.Data.Sides {
             SpecialInstructions = new List<String>();
             size = Size.Small;
             
+        }
+        /// <summary>
+        /// contructor to set size
+        /// </summary>
+        /// <param name="inpsize">input size</param>
+        public VolkunSalad(Size inpsize) {
+            SpecialInstructions = new List<String>();
+            size = inpsize;
         }
         /// <summary>
         /// turns salad to a string

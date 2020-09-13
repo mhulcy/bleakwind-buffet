@@ -91,5 +91,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             drink.Size = size;
             Assert.Equal(name, drink.ToString());
         }
+        [Fact]
+        public void ShouldBeAssignableToAbstractIOrderItemClass() {
+            var drink = new MarkarthMilk();
+            Assert.IsAssignableFrom<IOrderItem>(drink);
+        }
+
+        [Fact]
+        public void CanBeCastToBaseClass() {
+            var drink = new MarkarthMilk();
+            Assert.IsAssignableFrom<Drink>(drink);
+        }
     }
 }

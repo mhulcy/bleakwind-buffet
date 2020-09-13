@@ -71,5 +71,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             side.Size = size;
             Assert.Equal(name, side.ToString());
         }
+        [Fact]
+        public void ShouldBeAssignableToAbstractIOrderItemClass() {
+            var side = new MadOtarGrits();
+            Assert.IsAssignableFrom<IOrderItem>(side);
+        }
+
+        [Fact]
+        public void CanBeCastToBaseClass() {
+            var side = new MadOtarGrits();
+            Assert.IsAssignableFrom<Side>(side);
+        }
     }
 }

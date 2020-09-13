@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides {
-    public class MadOtarGrits {
+    public class MadOtarGrits : Side, IOrderItem {
         /// <summary>
         /// price of grits
         /// </summary>
@@ -48,8 +48,16 @@ namespace BleakwindBuffet.Data.Sides {
         public MadOtarGrits() {
             SpecialInstructions = new List<String>();
             size = Size.Small;
-
         }
+        /// <summary>
+        /// contructor to set size
+        /// </summary>
+        /// <param name="inpsize">input size</param>
+        public MadOtarGrits(Size inpsize) {
+            SpecialInstructions = new List<String>();
+            size = inpsize;
+        }
+
         /// <summary>
         /// turns grits to a string
         /// </summary>
