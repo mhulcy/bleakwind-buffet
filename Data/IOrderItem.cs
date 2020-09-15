@@ -7,14 +7,14 @@ namespace BleakwindBuffet.Data {
         /// <summary>
         /// Price of the item
         /// </summary>
-        double Price { get; set; }
+        double Price { get; }
         /// <summary>
         /// Calories of the item
         /// </summary>
-        uint Calories { get; set; }
+        uint Calories { get; }
         /// <summary>
         /// Special preperation instructions
         /// </summary>
-        List<string> SpecialInstructions { get; set; }
+        List<string> SpecialInstructions { get; }
     }
 }
