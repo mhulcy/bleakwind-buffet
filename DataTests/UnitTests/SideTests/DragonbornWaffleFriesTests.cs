@@ -48,6 +48,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             var side = new DragonbornWaffleFries();
             side.Size = size;
             Assert.Equal(price, side.Price);
+            
         }
 
         [Theory]
