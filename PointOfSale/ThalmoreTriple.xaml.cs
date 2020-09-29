@@ -13,13 +13,15 @@ using System.Windows.Shapes;
 
 namespace PointOfSale {
     /// <summary>
-    /// Interaction logic for SelectionScreen.xaml
+    /// Interaction logic for ThalmoreTriple.xaml
     /// </summary>
-    public partial class SelectionScreen : UserControl {
-        public SelectionScreen() {
+    public partial class ThalmoreTriple : UserControl {
+        public ThalmoreTriple() {
             InitializeComponent();
-            var menuSelect = new EntreeSelection();
-            SelectionComponent.Child = menuSelect;
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e) {
+            this.Content = new EntreeSelection();
         }
     }
 }

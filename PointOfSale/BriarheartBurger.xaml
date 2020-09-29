@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.SideSelection"
+﻿<UserControl x:Class="PointOfSale.BriarheartBurger"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -10,30 +10,27 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.Row="0" Grid.ColumnSpan ="2">
-            Add to order
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <ToggleButton Name="NoBun" Height="60" >No Bun</ToggleButton>
+            <ToggleButton Name="NoKetchup" Height="60">No Ketchup</ToggleButton>
+            <ToggleButton Name="NoMustard" Height="60">No Mustard</ToggleButton>
+            <ToggleButton Name="NoPickle" Height="60">No Pickle</ToggleButton>
+            <ToggleButton Name ="NoCheese" Height="60">No Cheese</ToggleButton> 
+        </StackPanel>
+        <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.Row="0" Grid.ColumnSpan ="2">
+            Customize
         </TextBlock>
-        <Button Name="FriesButton" Grid.Row="1" FontSize="20" Click="FriesButton_Click">
-            Dragonborn Waffle Fries
-        </Button>
-        <Button Name ="MiraakButton"  Grid.Row="2" FontSize="20" Click="MiraakButton_Click">
-            Fried Miraak
-        </Button>
-        <Button Name="GritsButton" Grid.Row="1" Grid.Column="1" FontSize="20" Click="GritsButton_Click">
-            Mad Otar Grits
-        </Button>
-        <Button Name ="SaladButton"  Grid.Row="2" Grid.Column="1" FontSize="20" Click="SaladButton_Click">
-            Volkun Salad
-        </Button>
-        <Button Name ="BackButton" Grid.Row="3" Grid.ColumnSpan="2" Click="BackButton_Click">
+        <Button Name="BackButton" Grid.Row ="2" Click="BackButton_Click">
             &lt;--
+        </Button>
+        <Button Grid.Row ="2" Grid.Column="1">
+            Done
         </Button>
     </Grid>
 </UserControl>

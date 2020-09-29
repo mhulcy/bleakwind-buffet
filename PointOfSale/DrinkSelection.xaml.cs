@@ -19,5 +19,29 @@ namespace PointOfSale {
         public DrinkSelection() {
             InitializeComponent();
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e) {
+            this.Content = new MenuSelection();
+        }
+
+        private void AppleJuiceButton_Click(object sender, RoutedEventArgs e) {
+            this.Content = new NonSodaDrink();
+        }
+
+        private void MilkButton_Click(object sender, RoutedEventArgs e) {
+            this.Content = new NonSodaDrink(); //come back to this
+        }
+
+        private void CoffeeButton_Click(object sender, RoutedEventArgs e) {
+            this.Content = new NonSodaDrink();
+        }
+
+        private void SodaButton_Click(object sender, RoutedEventArgs e) {
+            this.Content = new SodaDrink();
+        }
+
+        private void WaterButton_Click(object sender, RoutedEventArgs e) {
+            this.Content = new NonSodaDrink();
+        }
     }
 }

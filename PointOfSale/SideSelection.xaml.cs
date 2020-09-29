@@ -19,5 +19,24 @@ namespace PointOfSale {
         public SideSelection() {
             InitializeComponent();
         }
+        private void BackButton_Click(object sender, RoutedEventArgs e) {
+            this.Content = new MenuSelection();
+        }
+
+        private void FriesButton_Click(object sender, RoutedEventArgs e) {
+            this.Content = new SideSizeSelection();
+        }
+
+        private void GritsButton_Click(object sender, RoutedEventArgs e) {
+            this.Content = new SideSizeSelection();
+        }
+
+        private void MiraakButton_Click(object sender, RoutedEventArgs e) {
+            this.Content = new SideSizeSelection();
+        }
+
+        private void SaladButton_Click(object sender, RoutedEventArgs e) {
+            this.Content = new SideSizeSelection();
+        }
     }
 }

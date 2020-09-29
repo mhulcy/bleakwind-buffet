@@ -19,5 +19,17 @@ namespace PointOfSale {
         public MenuSelection() {
             InitializeComponent();
         }
+
+        private void Entree_Click(object sender, RoutedEventArgs e) {
+            this.Content = new EntreeSelection();
+        }
+
+        private void Side_Click(object sender, RoutedEventArgs e) {
+            this.Content = new SideSelection();
+        }
+
+        private void Drink_Click(object sender, RoutedEventArgs e) {
+            this.Content = new DrinkSelection();
+        }
     }
 }

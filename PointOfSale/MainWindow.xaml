@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="CornflowerBlue">
     <Grid>
-        <local:SelectionScreen></local:SelectionScreen>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".35*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="30" Grid.Row="0" >
+            Bleakwind Bufffet
+        </TextBlock>
+        <Border Name ="AddToOrderComponent" Grid.Row="1" Grid.Column="0"></Border>
+        <Border Name ="OrderListComponent" Grid.Row="1" Grid.Column="1"></Border>
+        
+        
     </Grid>
 </Window>
+
+    

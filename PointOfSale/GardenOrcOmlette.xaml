@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.SideSelection"
+﻿<UserControl x:Class="PointOfSale.GardenOrcOmlette"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,6 +9,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
+
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
@@ -17,23 +18,21 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.Row="0" Grid.ColumnSpan ="2">
-            Add to order
+
+   
+        <ToggleButton Grid.Row="1" Grid.Column="1" Name ="NoBroccoli" >No Broccoli</ToggleButton>
+        <ToggleButton Grid.Row="1" Grid.Column="0" Name ="NoTomato" >No Tomato</ToggleButton>
+        <ToggleButton Grid.Row="2" Grid.Column="1" Name ="NoMushroom" >No Musroom</ToggleButton>
+        <ToggleButton Grid.Row="2" Grid.Column="0" Name ="NoCheddar" >No Cheddar</ToggleButton>
+
+        <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.Row="0" Grid.ColumnSpan ="2">
+            Customize
         </TextBlock>
-        <Button Name="FriesButton" Grid.Row="1" FontSize="20" Click="FriesButton_Click">
-            Dragonborn Waffle Fries
-        </Button>
-        <Button Name ="MiraakButton"  Grid.Row="2" FontSize="20" Click="MiraakButton_Click">
-            Fried Miraak
-        </Button>
-        <Button Name="GritsButton" Grid.Row="1" Grid.Column="1" FontSize="20" Click="GritsButton_Click">
-            Mad Otar Grits
-        </Button>
-        <Button Name ="SaladButton"  Grid.Row="2" Grid.Column="1" FontSize="20" Click="SaladButton_Click">
-            Volkun Salad
-        </Button>
-        <Button Name ="BackButton" Grid.Row="3" Grid.ColumnSpan="2" Click="BackButton_Click">
+        <Button Name="BackButton" Grid.Row ="5" Click="BackButton_Click">
             &lt;--
+        </Button>
+        <Button Grid.Row ="5" Grid.Column="1">
+            Done
         </Button>
     </Grid>
 </UserControl>

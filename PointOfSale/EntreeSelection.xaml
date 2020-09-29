@@ -5,9 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="500" Background="White">
+             d:DesignHeight="400" d:DesignWidth="500" Background="LightSteelBlue">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
@@ -17,28 +18,31 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button Name="BriarheartButton" Grid.Row="0" FontSize="20">
+        <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.Row="0" Grid.ColumnSpan ="2">
+            Add to order
+        </TextBlock>
+        <Button Name="BriarheartButton" Grid.Row="1" FontSize="20" Click="BriarheartButton_Click">
             Briarheart Burger
         </Button>
-        <Button Name ="DoubleButton"  Grid.Row="1" FontSize="20">
+        <Button Name ="DoubleButton"  Grid.Row="2" FontSize="20" Click="DoubleButton_Click">
             Double Draugr
         </Button>
-        <Button Name ="OmletteButton"  Grid.Row="2" FontSize="20">
+        <Button Name ="OmletteButton"  Grid.Row="3" FontSize="20" Click="OmletteButton_Click">
             Garden Orc Omlette
         </Button>
-        <Button Name ="BackButton"  Grid.Row="3" FontSize="20">
+        <Button Name ="BackButton"  Grid.Row="4" FontSize="20" Click="BackButton_Click">
             &lt;-- 
         </Button>
-        <Button Name="SmokehouseButton" Grid.Row="0" Grid.Column="1" FontSize="20">
+        <Button Name="SmokehouseButton" Grid.Row="1" Grid.Column="1" FontSize="20" Click="SmokehouseButton_Click">
             Smokehouse Skeleton
         </Button>
-        <Button Name="TripleButton" Grid.Row="1" Grid.Column="1" FontSize="20">
+        <Button Name="TripleButton" Grid.Row="2" Grid.Column="1" FontSize="20" Click="TripleButton_Click">
             Thalmor Triple
         </Button>
-        <Button Name="TboneButton" Grid.Row="2" Grid.Column="1" FontSize="20">
+        <Button Name="TboneButton" Grid.Row="3" Grid.Column="1" FontSize="20" Click="TboneButton_Click">
             Thugs T-Bone
         </Button>
-        <Button Name="PhillyButton" Grid.Row="3" Grid.Column="1" FontSize="20">
+        <Button Name="PhillyButton" Grid.Row="4" Grid.Column="1" FontSize="20" Click="PhillyButton_Click">
             Philly Poacher
         </Button>
     </Grid>

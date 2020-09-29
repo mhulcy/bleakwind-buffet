@@ -5,16 +5,42 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="250" Background="White">
+             d:DesignHeight="400" d:DesignWidth="250" Background="LightBlue">
     <Grid>
-        <DockPanel>
-            <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontWeight="Bold" FontSize="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+            <TextBlock  TextAlignment="Center" FontWeight="Bold" FontSize="20">
                 Order #47
             </TextBlock>
-            <ListView Name ="orderList" DockPanel.Dock="Top">
-                <ListViewItem Content="Mike"></ListViewItem>
-                <ListViewItem Content="Mike"></ListViewItem>
+            <ListView Name ="orderList" Grid.Row="1">
+                <ListViewItem Content="Small Cherry Sailor Soda"></ListViewItem>
+                <ListViewItem Content="Thugs T-Bone"></ListViewItem>
+                <ListViewItem Content="Large Volkun Salad"></ListViewItem>
             </ListView>
-        </DockPanel>
+            <ListView  Grid.Row="1" Grid.Column="1">
+                <ListViewItem Content="$1.47"></ListViewItem>
+                <ListViewItem Content="$6.44"></ListViewItem>
+                <ListViewItem Content="$1.82"></ListViewItem>
+        </ListView>
+        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="2" Grid.ColumnSpan="2" >
+                Subtotal: $9.73
+            </TextBlock>
+        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="3" Grid.ColumnSpan="2">
+                Tax: $0.82
+            </TextBlock>
+        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="4" Grid.ColumnSpan="2"  >
+                Total: $10.55
+        </TextBlock>
+
     </Grid>
 </UserControl>

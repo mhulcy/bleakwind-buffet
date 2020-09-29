@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -15,15 +13,15 @@ using System.Windows.Shapes;
 
 namespace PointOfSale {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for BriarheartBurger.xaml
     /// </summary>
-    public partial class MainWindow : Window {
-        public MainWindow() {
+    public partial class BriarheartBurger : UserControl {
+        public BriarheartBurger() {
             InitializeComponent();
-            var orderSelect = new MenuSelection();
-            AddToOrderComponent.Child = orderSelect;
-            var orderList = new OrderComponent();
-            OrderListComponent.Child = orderList;
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e) {
+            this.Content = new EntreeSelection();
         }
     }
 }

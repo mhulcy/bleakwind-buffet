@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.DrinkSelection"
+﻿<UserControl x:Class="PointOfSale.SodaDrink"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -11,32 +11,28 @@
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
+
             <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.Row="0" Grid.ColumnSpan ="2">
-            Add to order
+        
+        <Button Grid.Row="1" Grid.Column="1" Name="CherryButton" Click="CherryButton_Click">Cherry</Button>
+        <Button Grid.Row="2" Grid.Column="1" Name="BlackberryButton" Click="BlackberryButton_Click">Blackberry</Button>
+        <Button Grid.Row="3" Grid.Column="1" Name="GrapefruitButton" Click="GrapefruitButton_Click">Grapefruit</Button>
+        <Button Grid.Row="1" Grid.Column="0" Name="LemonButton" Click="LemonButton_Click">Lemon</Button>
+        <Button Grid.Row="2" Grid.Column="0" Name="PeachButton" Click="PeachButton_Click">Peach</Button>
+        <Button Grid.Row="3" Grid.Column="0" Name="WatermelonButton" Click="WatermelonButton_Click">Watermelon</Button>
+
+        <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.Row="0" Grid.ColumnSpan ="2">
+            Select Flavor
         </TextBlock>
-        <Button Name="AppleJuiceButton" Grid.Row="1" FontSize="20" Click="AppleJuiceButton_Click">
-            Arentino Apple Juice
-        </Button>
-        <Button Name ="CoffeeButton"  Grid.Row="2" FontSize="20" Click="CoffeeButton_Click">
-            Candlehearth Coffee
-        </Button>
-        <Button Name="MilkButton" Grid.Row="1" Grid.Column="1" FontSize="20" Click="MilkButton_Click">
-            Markarth Milk
-        </Button>
-        <Button Name="SodaButton" Grid.Row="2" Grid.Column="1" FontSize="20" Click="SodaButton_Click">
-            Sailor Soda
-        </Button>
-        <Button Name ="BackButton" Grid.Row="3" Grid.Column="0" Click="BackButton_Click">
+        <Button Name="BackButton" Grid.Row ="5" Grid.ColumnSpan="2" Click="BackButton_Click">
             &lt;--
         </Button>
-        <Button Name ="WaterButton" Grid.Row="4" Grid.Column="1" FontSize="20" Click="WaterButton_Click">
-            Warrior Water
-        </Button>
+       
     </Grid>
 </UserControl>
