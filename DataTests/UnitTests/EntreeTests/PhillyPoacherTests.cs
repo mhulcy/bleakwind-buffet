@@ -101,14 +101,51 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
         [Fact]
         public void ShouldBeAssignableToAbstractIOrderItemClass() {
-            var entree = new BriarheartBurger();
+            var entree = new PhillyPoacher();
             Assert.IsAssignableFrom<IOrderItem>(entree);
         }
 
         [Fact]
         public void CanBeCastToBaseClass() {
-            var entree = new BriarheartBurger();
+            var entree = new PhillyPoacher();
             Assert.IsAssignableFrom<Entree>(entree);
+        }
+        [Fact]
+        public void ChangingSirlionNotifiesSirlionProperty() {
+            var entree = new PhillyPoacher();
+            Assert.PropertyChanged(entree, "Sirlion", () => {
+                entree.Sirlion = true;
+            });
+
+            Assert.PropertyChanged(entree, "Sirlion", () => {
+                entree.Sirlion = false;
+            });
+        }
+        [Fact]
+        public void ChangingOnionNotifiesOnionProperty() {
+            var entree = new PhillyPoacher();
+
+            Assert.PropertyChanged(entree, "Onion", () => {
+                entree.Onion = true;
+            });
+
+            Assert.PropertyChanged(entree, "Onion", () => {
+                entree.Onion = false;
+            });
+        }
+
+        [Fact]
+
+        public void ChangingTRollNotifiesRollProperty() {
+            var entree = new PhillyPoacher();
+
+            Assert.PropertyChanged(entree, "Roll", () => {
+                entree.Roll = true;
+            });
+
+            Assert.PropertyChanged(entree, "Roll", () => {
+                entree.Roll = false;
+            });
         }
     }
 

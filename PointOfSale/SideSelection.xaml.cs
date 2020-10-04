@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Sides;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -25,18 +26,22 @@ namespace PointOfSale {
 
         private void FriesButton_Click(object sender, RoutedEventArgs e) {
             this.Content = new SideSizeSelection();
+            this.DataContext = new DragonbornWaffleFries();
         }
 
         private void GritsButton_Click(object sender, RoutedEventArgs e) {
             this.Content = new SideSizeSelection();
+            this.DataContext = new MadOtarGrits();
         }
 
         private void MiraakButton_Click(object sender, RoutedEventArgs e) {
             this.Content = new SideSizeSelection();
+            this.DataContext = new FriedMiraak();
         }
 
         private void SaladButton_Click(object sender, RoutedEventArgs e) {
             this.Content = new SideSizeSelection();
+            this.DataContext = new VolkunSalad();
         }
     }
 }

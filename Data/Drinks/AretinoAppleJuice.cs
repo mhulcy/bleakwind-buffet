@@ -35,6 +35,7 @@ namespace BleakwindBuffet.Data.Drinks {
                     Price = 0.62;
                     Calories = 44;
                     size = Size.Small;
+                   
                 }
                 else if (value == Size.Medium) {
                     Price = 0.87;
@@ -46,6 +47,9 @@ namespace BleakwindBuffet.Data.Drinks {
                     Calories = 132;
                     size = Size.Large;
                 }
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
             }
         }
         /// <summary>

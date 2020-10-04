@@ -39,6 +39,9 @@ namespace BleakwindBuffet.Data.Sides {
                     Calories = 73;
                     size = Size.Large;
                 }
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
             }
         }
 

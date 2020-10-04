@@ -35,6 +35,7 @@ namespace BleakwindBuffet.Data.Entree {
                 broccoli = value;
                 if (!value)
                     SpecialInstructions.Add("Hold broccoli");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Broccoli"));
             }
         }
         /// <summary>
@@ -46,7 +47,9 @@ namespace BleakwindBuffet.Data.Entree {
                 mushrooms = value;
                 if (!value)
                     SpecialInstructions.Add("Hold mushrooms");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mushrooms"));
             }
+
         }
         /// <summary>
         /// if the omlette should have tomato
@@ -57,6 +60,7 @@ namespace BleakwindBuffet.Data.Entree {
                 tomato = value;
                 if (!value)
                     SpecialInstructions.Add("Hold tomato");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
             }
         }
         /// <summary>
@@ -68,6 +72,7 @@ namespace BleakwindBuffet.Data.Entree {
                 cheddar = value;
                 if (!value)
                     SpecialInstructions.Add("Hold cheddar");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheddar"));
             }
         }
 

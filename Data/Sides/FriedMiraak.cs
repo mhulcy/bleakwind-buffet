@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Sides {
     public class FriedMiraak : Side, IOrderItem, INotifyPropertyChanged {
-        /// <summary>
+        /// <summary 
         /// price of hashbrowns
         /// </summary>
         public double Price { get; set; }
@@ -40,6 +40,9 @@ namespace BleakwindBuffet.Data.Sides {
                     Calories = 306;
                     size = Size.Large;
                 }
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
             }
         }
 

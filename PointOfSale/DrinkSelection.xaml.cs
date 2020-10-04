@@ -26,24 +26,28 @@ namespace PointOfSale {
         }
 
         private void AppleJuiceButton_Click(object sender, RoutedEventArgs e) {
-            this.DataContext = new AretinoAppleJuice();
-            
+            var drink = new AretinoAppleJuice();
+            this.DataContext = drink;
             this.Content = new NonSodaDrink();
         }
 
         private void MilkButton_Click(object sender, RoutedEventArgs e) {
+            this.DataContext = new MarkarthMilk();
             this.Content = new NonSodaDrink(); //come back to this
         }
 
         private void CoffeeButton_Click(object sender, RoutedEventArgs e) {
+            this.DataContext = new CandlehearthCoffee();
             this.Content = new NonSodaDrink();
         }
 
         private void SodaButton_Click(object sender, RoutedEventArgs e) {
+            this.DataContext = new SailorSoda();
             this.Content = new SodaDrink();
         }
 
         private void WaterButton_Click(object sender, RoutedEventArgs e) {
+            this.DataContext = new WarriorWater();
             this.Content = new NonSodaDrink();
         }
     }

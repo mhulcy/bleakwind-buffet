@@ -26,7 +26,9 @@ namespace BleakwindBuffet.Data.Drinks {
                 roomForCream = value;
                 if (value)
                     SpecialInstructions.Add("Save room for cream");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
             }
+
         }
         /// <summary>
         /// if the coffee should be decaf
@@ -37,6 +39,7 @@ namespace BleakwindBuffet.Data.Drinks {
                 decaf = value;
                 if (value)
                     SpecialInstructions.Add("Decaf");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
             }
         }
 
@@ -66,6 +69,9 @@ namespace BleakwindBuffet.Data.Drinks {
                     Calories = 20;
                     size = Size.Large;
                 }
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
             }
         }
         /// <summary>
@@ -77,6 +83,7 @@ namespace BleakwindBuffet.Data.Drinks {
                 ice = value;
                 if (value)
                     SpecialInstructions.Add("Add ice");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
             }
         }
         /// <summary>

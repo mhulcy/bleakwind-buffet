@@ -79,5 +79,54 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             var side = new VolkunSalad();
             Assert.IsAssignableFrom<Side>(side);
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty() {
+            var side = new VolkunSalad();
+
+            Assert.PropertyChanged(side, "Size", () => {
+                side.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(side, "Size", () => {
+                side.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(side, "Size", () => {
+                side.Size = Size.Small;
+            });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty() {
+            var side = new VolkunSalad();
+
+            Assert.PropertyChanged(side, "Price", () => {
+                side.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(side, "Price", () => {
+                side.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(side, "Price", () => {
+                side.Size = Size.Small;
+            });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty() {
+            var side = new VolkunSalad();
+
+            Assert.PropertyChanged(side, "Calories", () => {
+                side.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(side, "Calories", () => {
+                side.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(side, "Calories", () => {
+                side.Size = Size.Small;
+            });
+        }
     }
 }

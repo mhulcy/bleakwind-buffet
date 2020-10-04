@@ -34,6 +34,7 @@ namespace BleakwindBuffet.Data.Entree {
                 sausageLink = value;
                 if (!value)
                     SpecialInstructions.Add("Hold sausage link");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SausageLink"));
             }
         }
         /// <summary>
@@ -45,6 +46,7 @@ namespace BleakwindBuffet.Data.Entree {
                 egg = value;
                 if (!value)
                     SpecialInstructions.Add("Hold egg");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
             }
         }
         /// <summary>
@@ -56,6 +58,7 @@ namespace BleakwindBuffet.Data.Entree {
                 hashBrowns = value;
                 if (!value)
                     SpecialInstructions.Add("Hold hash browns");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HashBrowns"));
             }
         }
         /// <summary>
@@ -67,6 +70,7 @@ namespace BleakwindBuffet.Data.Entree {
                 pancake = value;
                 if (!value)
                     SpecialInstructions.Add("Hold pancake");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pancake"));
             }
         }
       

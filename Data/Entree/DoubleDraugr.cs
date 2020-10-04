@@ -38,7 +38,9 @@ namespace BleakwindBuffet.Data.Entree {
                 bun = value;
                 if (!value)
                     SpecialInstructions.Add("Hold bun");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
             }
+            
         }
         /// <summary>
         /// if the burger should have ketchup
@@ -49,7 +51,8 @@ namespace BleakwindBuffet.Data.Entree {
                 ketchup = value;
                 if (!value)
                     SpecialInstructions.Add("Hold ketchup");
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
+        }
         }
         /// <summary>
         /// if the burger should have mustard
@@ -60,6 +63,7 @@ namespace BleakwindBuffet.Data.Entree {
                 mustard = value;
                 if (!value)
                     SpecialInstructions.Add("Hold mustard");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
             }
         }
         /// <summary>
@@ -71,6 +75,7 @@ namespace BleakwindBuffet.Data.Entree {
                 pickle = value;
                 if (!value)
                     SpecialInstructions.Add("Hold pickle");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
             }
         }
         /// <summary>
@@ -82,6 +87,7 @@ namespace BleakwindBuffet.Data.Entree {
                 cheese = value;
                 if (!value)
                     SpecialInstructions.Add("Hold cheese");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
             }
         }
         /// <summary>
@@ -93,6 +99,7 @@ namespace BleakwindBuffet.Data.Entree {
                 tomato = value;
                 if (!value)
                     SpecialInstructions.Add("Hold tomato");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
             }
         }
         /// <summary>
@@ -104,6 +111,7 @@ namespace BleakwindBuffet.Data.Entree {
                 lettuce = value;
                 if (!value)
                     SpecialInstructions.Add("Hold lettuce");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
             }
         }
         /// <summary>
@@ -115,6 +123,7 @@ namespace BleakwindBuffet.Data.Entree {
                 mayo = value;
                 if (!value)
                     SpecialInstructions.Add("Hold mayo");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
             }
         }
       

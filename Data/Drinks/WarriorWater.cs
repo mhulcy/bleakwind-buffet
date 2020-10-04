@@ -40,6 +40,9 @@ namespace BleakwindBuffet.Data.Drinks {
                     Calories = 0;
                     size = Size.Large;
                 }
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
             }
         }
         /// <summary>
@@ -51,6 +54,7 @@ namespace BleakwindBuffet.Data.Drinks {
                 ice = value;
                 if (!value)
                     SpecialInstructions.Add("Hold ice");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
             }
         }
         /// <summary>
@@ -61,7 +65,8 @@ namespace BleakwindBuffet.Data.Drinks {
             set {
                 Lemon = value;
                 if (value)
-                    SpecialInstructions.Add("add lemon");
+                    SpecialInstructions.Add("Add lemon");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
             }
         }
         /// <summary>

@@ -89,5 +89,79 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests {
             var drink = new WarriorWater();
             Assert.IsAssignableFrom<Drink>(drink);
         }
+
+        [Fact]
+        public void ChangingIceNotifiesIceProperty() {
+            var drink = new WarriorWater();
+
+            Assert.PropertyChanged(drink, "Ice", () => {
+                drink.Ice = true;
+            });
+
+            Assert.PropertyChanged(drink, "Ice", () => {
+                drink.Ice = false;
+            });
+        }
+        [Fact]
+        public void ChangingLemonNotifiesLemonProperty() {
+            var drink = new WarriorWater();
+
+            Assert.PropertyChanged(drink, "Lemon", () => {
+                drink.Lemon = true;
+            });
+
+            Assert.PropertyChanged(drink, "Lemon", () => {
+                drink.Lemon = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty() {
+            var drink = new WarriorWater();
+
+            Assert.PropertyChanged(drink, "Size", () => {
+                drink.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(drink, "Size", () => {
+                drink.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(drink, "Size", () => {
+                drink.Size = Size.Small;
+            });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty() {
+            var drink = new WarriorWater();
+
+            Assert.PropertyChanged(drink, "Price", () => {
+                drink.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(drink, "Price", () => {
+                drink.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(drink, "Price", () => {
+                drink.Size = Size.Small;
+            });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty() {
+            var drink = new WarriorWater();
+
+            Assert.PropertyChanged(drink, "Calories", () => {
+                drink.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(drink, "Calories", () => {
+                drink.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(drink, "Calories", () => {
+                drink.Size = Size.Small;
+            });
+        }
     }
 }
