@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Drinks;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -25,6 +26,8 @@ namespace PointOfSale {
         }
 
         private void AppleJuiceButton_Click(object sender, RoutedEventArgs e) {
+            this.DataContext = new AretinoAppleJuice();
+            
             this.Content = new NonSodaDrink();
         }
 

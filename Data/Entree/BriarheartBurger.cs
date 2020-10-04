@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entree {
-    public class BriarheartBurger : Entree, IOrderItem {
+    public class BriarheartBurger : Entree, IOrderItem, INotifyPropertyChanged {
 
         /// <summary>
         /// price of a burger
@@ -23,6 +24,8 @@ namespace BleakwindBuffet.Data.Entree {
         private bool mustard;
         private bool pickle;
         private bool cheese;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// if the burger should have a bun

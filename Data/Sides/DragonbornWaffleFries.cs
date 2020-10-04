@@ -1,10 +1,11 @@
 ﻿  using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides {
-    public class DragonbornWaffleFries : Side, IOrderItem {
+    public class DragonbornWaffleFries : Side, IOrderItem, INotifyPropertyChanged {
         /// <summary>
         /// price of fries
         /// </summary>
@@ -17,6 +18,9 @@ namespace BleakwindBuffet.Data.Sides {
         /// size of fries as Size enum
         /// </summary>
         private Size size;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public Size Size {
             get { return size; }
             set {

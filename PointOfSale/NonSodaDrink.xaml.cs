@@ -22,6 +22,7 @@ namespace PointOfSale {
 
         private void BackButton_Click(object sender, RoutedEventArgs e) {
             this.Content = new DrinkSelection();
+            this.DataContext.
         }
     }
 }

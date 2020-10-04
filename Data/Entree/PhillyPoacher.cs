@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entree {
-    public class PhillyPoacher : Entree, IOrderItem {
+    public class PhillyPoacher : Entree, IOrderItem, INotifyPropertyChanged {
         /// <summary>
         /// price of the philly
         /// </summary>
@@ -21,6 +22,9 @@ namespace BleakwindBuffet.Data.Entree {
         private bool sirlion;
         private bool onion;
         private bool roll;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// if the philly should have sirlion
         /// </summary>

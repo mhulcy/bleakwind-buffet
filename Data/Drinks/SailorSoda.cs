@@ -1,10 +1,11 @@
 ﻿using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks {
-    public class SailorSoda : Drink, IOrderItem {
+    public class SailorSoda : Drink, IOrderItem, INotifyPropertyChanged {
         /// <summary>
         /// price of soda
         /// </summary>
@@ -16,6 +17,9 @@ namespace BleakwindBuffet.Data.Drinks {
 
         private bool ice;
         private Size size;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// flavor of soda as SodaFlavor enum
         /// </summary>

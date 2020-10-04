@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entree {
-    public class ThugsTBone : Entree, IOrderItem {
+    public class ThugsTBone : Entree, IOrderItem, INotifyPropertyChanged {
         /// <summary>
         /// price of TBone
         /// </summary>
@@ -25,6 +26,9 @@ namespace BleakwindBuffet.Data.Entree {
             Calories = 982;
             SpecialInstructions = new List<String>();
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// turns TBone to a string
         /// </summary>

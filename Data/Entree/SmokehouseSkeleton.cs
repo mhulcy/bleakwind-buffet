@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entree {
-    public class SmokehouseSkeleton : Entree, IOrderItem {
+    public class SmokehouseSkeleton : Entree, IOrderItem, INotifyPropertyChanged {
         /// <summary>
         /// price of breakfast combo
         /// </summary>
@@ -21,6 +22,9 @@ namespace BleakwindBuffet.Data.Entree {
         private bool hashBrowns;
         private bool pancake;
         private bool sausageLink;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// if the breakfast combo should have sausage
         /// </summary>

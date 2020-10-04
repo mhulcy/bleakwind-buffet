@@ -1,10 +1,11 @@
 ﻿using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks {
-    public class AretinoAppleJuice : Drink, IOrderItem{
+    public class AretinoAppleJuice : Drink, IOrderItem, INotifyPropertyChanged {
         /// <summary>
         /// price of the apple juice
         /// </summary>
@@ -21,6 +22,9 @@ namespace BleakwindBuffet.Data.Drinks {
 
         private bool ice;
         private Size size;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// size of the apple juice as a Size enum
         /// </summary>
@@ -53,6 +57,7 @@ namespace BleakwindBuffet.Data.Drinks {
                 ice = value;
                 if (value)
                     SpecialInstructions.Add("Add ice");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
             }
         }
         

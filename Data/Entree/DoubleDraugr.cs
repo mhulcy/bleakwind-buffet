@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entree {
-    public class DoubleDraugr : Entree, IOrderItem {
+    public class DoubleDraugr : Entree, IOrderItem, INotifyPropertyChanged {
         /// <summary>
         /// price of a double burger
         /// </summary>
@@ -25,6 +26,9 @@ namespace BleakwindBuffet.Data.Entree {
         private bool tomato;
         private bool lettuce;
         private bool mayo;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// if the burger should have a bun
         /// </summary>

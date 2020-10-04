@@ -1,10 +1,11 @@
 ﻿using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides {
-    public class VolkunSalad : Side, IOrderItem {
+    public class VolkunSalad : Side, IOrderItem, INotifyPropertyChanged {
         /// <summary>
         /// price of salad
         /// </summary>
@@ -14,6 +15,9 @@ namespace BleakwindBuffet.Data.Sides {
         /// </summary>
         public uint Calories { get; set; }
         private Size size;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// size of salad as Size enum
         /// </summary>

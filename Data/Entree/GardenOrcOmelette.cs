@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entree {
-    public class GardenOrcOmlette : Entree, IOrderItem {
+    public class GardenOrcOmlette : Entree, IOrderItem, INotifyPropertyChanged {
 
         /// <summary>
         /// price of the omlette
@@ -22,10 +23,12 @@ namespace BleakwindBuffet.Data.Entree {
         private bool mushrooms;
         private bool tomato;
         private bool cheddar;
-        
-       /// <summary>
-       /// if the omlette should have broccoli
-       /// </summary>
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// if the omlette should have broccoli
+        /// </summary>
         public bool Broccoli {
             get { return broccoli; }
             set {
