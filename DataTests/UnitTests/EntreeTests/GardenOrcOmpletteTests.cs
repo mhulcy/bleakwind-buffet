@@ -8,11 +8,17 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entree;
 using System.Net.Http.Headers;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class GardenOrcOmeletteTests
     {
+        [Fact]
+        public void ImplementsINotifyPropertyChangedInterface() {
+            var drink = new GardenOrcOmlette();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(drink);
+        }
         [Fact]
         public void ShouldInlcudeBroccoliByDefault()
         {

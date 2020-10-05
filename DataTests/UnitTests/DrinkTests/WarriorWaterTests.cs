@@ -3,9 +3,15 @@
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests {
     public class WarriorWaterTests {
+        [Fact]
+        public void ImplementsINotifyPropertyChangedInterface() {
+            var drink = new WarriorWater();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(drink);
+        }
         [Fact]
         public void ShouldNotIncludeIceByDefault() {
             var drink = new WarriorWater();

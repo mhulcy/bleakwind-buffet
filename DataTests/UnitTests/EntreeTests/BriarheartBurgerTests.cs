@@ -8,12 +8,18 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Entree;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class BriarheartBurgerTests
     {
-        
+        [Fact]
+        public void ImplementsINotifyPropertyChangedInterface() {
+            var drink = new BriarheartBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(drink);
+        }
+
         [Fact]
         public void ShouldIncludeBunByDefault()
         {

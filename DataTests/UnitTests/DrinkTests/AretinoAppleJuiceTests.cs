@@ -8,6 +8,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -167,6 +168,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.PropertyChanged(drink, "Calories", () => {
                 drink.Size = Size.Small;
             });
+        }
+        [Fact]
+        public void ImplementsINotifyPropertyChangedInterface() {
+            var drink = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(drink);
         }
     }
 }
