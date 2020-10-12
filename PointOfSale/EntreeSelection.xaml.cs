@@ -1,4 +1,4 @@
-﻿using BleakwindBuffet.Data.Entree;
+﻿using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,8 +26,8 @@ namespace PointOfSale {
         }
 
         private void BriarheartButton_Click(object sender, RoutedEventArgs e) {
-            this.Content = new BriarheartBurger();
-            this.DataContext = new BriarheartBurger();
+            this.Content = new BriarheartBurgerComponent();
+            this.DataContext = new BriarheartBurgerComponent();
         }
 
         private void SmokehouseButton_Click(object sender, RoutedEventArgs e) {

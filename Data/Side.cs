@@ -8,18 +8,18 @@ namespace BleakwindBuffet.Data {
         /// <summary>
         /// Price of the item
         /// </summary>
-        double Price { get; }
+        public abstract double Price { get; set; }
         /// <summary>
         /// Calories of the item
         /// </summary>
-        uint Calories { get; }
+        public abstract uint Calories { get; set; }
         /// <summary>
         /// Special preperation instructions
         /// </summary>
-        List<string> SpecialInstructions { get; }
+        public abstract List<string> SpecialInstructions { get; }
         /// <summary>
         /// Size of side
         /// </summary>
-        Size Size { get; set; }
+        public virtual Size Size { get; set; }
     }
 }

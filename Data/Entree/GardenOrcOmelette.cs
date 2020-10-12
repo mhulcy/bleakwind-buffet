@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace BleakwindBuffet.Data.Entree {
+namespace BleakwindBuffet.Data.Entrees {
     public class GardenOrcOmlette : Entree, IOrderItem, INotifyPropertyChanged {
 
         /// <summary>
         /// price of the omlette
         /// </summary>
-        public double Price { get; set; }
+        public override double Price { get; set; }
         /// <summary>
         /// calories of the omlette
         /// </summary>
-        public uint Calories { get; set; }
+        public override uint Calories { get; set; }
         /// <summary>
         /// list of special preperation instructions
         /// </summary>
-        public List<String> SpecialInstructions { get; set; }
+        public override List<String> SpecialInstructions { get; }
 
         private bool broccoli;
         private bool mushrooms;

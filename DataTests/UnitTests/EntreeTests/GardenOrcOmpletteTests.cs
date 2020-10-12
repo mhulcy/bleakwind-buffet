@@ -6,7 +6,7 @@
 using Xunit;
 
 using BleakwindBuffet.Data;
-using BleakwindBuffet.Data.Entree;
+using BleakwindBuffet.Data.Entrees;
 using System.Net.Http.Headers;
 using System.ComponentModel;
 

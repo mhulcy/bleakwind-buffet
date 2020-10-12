@@ -1,5 +1,5 @@
 ﻿using BleakwindBuffet.Data.Drinks;
-using BleakwindBuffet.Data.Entree;
+using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
 using System;

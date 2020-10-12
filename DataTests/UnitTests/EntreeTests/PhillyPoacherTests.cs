@@ -7,7 +7,7 @@ using Xunit;
 
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data;
-using BleakwindBuffet.Data.Entree;
+using BleakwindBuffet.Data.Entrees;
 using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests

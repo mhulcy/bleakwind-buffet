@@ -9,11 +9,11 @@ namespace BleakwindBuffet.Data.Drinks {
         /// <summary>
         /// price of soda
         /// </summary>
-        public double Price { get; set; }
+        public override double Price { get; set; }
         /// <summary>
         /// calories of soda
         /// </summary>
-        public uint Calories { get; set; }
+        public override uint Calories { get; set; }
 
         private bool ice;
         private Size size;
@@ -27,7 +27,7 @@ namespace BleakwindBuffet.Data.Drinks {
         /// <summary>
         /// size of soda as Size enum
         /// </summary>
-        public Size Size {
+        public override Size Size {
             get { return size; }
             set {
                 if (value == Size.Small) {
@@ -65,7 +65,7 @@ namespace BleakwindBuffet.Data.Drinks {
         /// <summary>
         /// list of special preperation instructions
         /// </summary>
-        public List<String> SpecialInstructions { get; set; }
+        public override List<String> SpecialInstructions { get; }
 
         /// <summary>
         /// constructor to setup defualt values

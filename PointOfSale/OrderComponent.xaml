@@ -22,18 +22,16 @@
             <TextBlock  TextAlignment="Center" FontWeight="Bold" FontSize="20">
                 Order #47
             </TextBlock>
-            <ListView Name ="orderList" Grid.Row="1">
-                <ListViewItem Content="Small Cherry Sailor Soda"></ListViewItem>
-                <ListViewItem Content="Thugs T-Bone"></ListViewItem>
-                <ListViewItem Content="Large Volkun Salad"></ListViewItem>
+            <ListView Name ="orderList" Grid.Row="1" ItemsSource="{Binding}">
+                
             </ListView>
             <ListView  Grid.Row="1" Grid.Column="1">
-                <ListViewItem Content="$1.47"></ListViewItem>
+                <ListViewItem Content="{Binding Path=Subtotal}"></ListViewItem>
                 <ListViewItem Content="$6.44"></ListViewItem>
                 <ListViewItem Content="$1.82"></ListViewItem>
         </ListView>
-        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="2" Grid.ColumnSpan="2" >
-                Subtotal: $9.73
+        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Path=Subtotal}" >
+                
             </TextBlock>
         <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="3" Grid.ColumnSpan="2">
                 Tax: $0.82

@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BleakwindBuffet.Data.Entree {
+namespace BleakwindBuffet.Data.Entrees {
     public abstract class Entree {
         /// <summary>
         /// Price of the item
         /// </summary>
-        double Price { get; }
+        public abstract double Price { get; set; }
         /// <summary>
         /// Calories of the item
         /// </summary>
-        uint Calories { get; }
+        public abstract uint Calories { get; set; }
         /// <summary>
         /// Special preperation instructions
         /// </summary>
-        List<string> SpecialInstructions { get;  }
+        public abstract List<string> SpecialInstructions { get;  }
     }
 }

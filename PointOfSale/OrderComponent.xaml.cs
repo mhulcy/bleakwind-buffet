@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Entrees;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -6,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -18,6 +22,12 @@ namespace PointOfSale {
     public partial class OrderComponent : UserControl {
         public OrderComponent() {
             InitializeComponent();
+            Order order = new Order();
+            order.Add(new BriarheartBurger());
+            order.Add(new SailorSoda());
+            this.DataContext = order;
+            //IOrderItem b = new BriarheartBurger();
+            
         }
     }
 }

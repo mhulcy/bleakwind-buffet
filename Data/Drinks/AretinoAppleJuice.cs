@@ -9,16 +9,16 @@ namespace BleakwindBuffet.Data.Drinks {
         /// <summary>
         /// price of the apple juice
         /// </summary>
-        public double Price { get; set; }
+        public override double Price { get; set; }
         /// <summary>
         /// calories of the apple juice
         /// </summary>
-        public uint Calories { get; set; }
+        public override uint Calories { get; set; }
 
         /// <summary>
         /// list of special instructions
         /// </summary>
-        public List<String> SpecialInstructions { get; set; }
+        public override List<String> SpecialInstructions { get;  }
 
         private bool ice;
         private Size size;
@@ -28,7 +28,7 @@ namespace BleakwindBuffet.Data.Drinks {
         /// <summary>
         /// size of the apple juice as a Size enum
         /// </summary>
-        public Size Size {
+        public override Size Size {
             get { return size; }
             set {
                 if (value == Size.Small) {

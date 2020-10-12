@@ -9,11 +9,11 @@ namespace BleakwindBuffet.Data.Sides {
         /// <summary>
         /// price of grits
         /// </summary>
-        public double Price { get; set; }
+        public override double Price { get; set; }
         /// <summary>
         /// calories of grits
         /// </summary>
-        public uint Calories { get; set; }
+        public override uint Calories { get; set; }
         private Size size;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -21,7 +21,7 @@ namespace BleakwindBuffet.Data.Sides {
         /// <summary>
         /// size of grits as Size enum
         /// </summary>
-        public Size Size {
+        public override Size Size {
             get { return size; }
             set {
                 if (value == Size.Small) {
@@ -48,7 +48,7 @@ namespace BleakwindBuffet.Data.Sides {
         /// <summary>
         /// list of special preperation instructions
         /// </summary>
-        public List<String> SpecialInstructions { get; set; }
+        public override List<String> SpecialInstructions { get; }
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>

@@ -2,7 +2,7 @@
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
-using BleakwindBuffet.Data.Entree;
+using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Drinks;
 using System.Collections.Generic;
 using BleakwindBuffet.Data.Sides;
