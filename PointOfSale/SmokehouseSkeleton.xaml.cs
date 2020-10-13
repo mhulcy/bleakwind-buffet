@@ -15,13 +15,19 @@ namespace PointOfSale {
     /// <summary>
     /// Interaction logic for SmokehouseSkeleton.xaml
     /// </summary>
-    public partial class SmokehouseSkeleton : UserControl {
-        public SmokehouseSkeleton() {
+    public partial class SmokehouseSkeletonComponent : UserControl {
+        public SmokehouseSkeletonComponent() {
             InitializeComponent();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e) {
-            this.Content = new EntreeSelection();
+            DependencyObject parent = this;
+            do {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main) {
+                main.AddToOrderComponent.Child = new MenuSelection();
+            }
         }
     }
 }

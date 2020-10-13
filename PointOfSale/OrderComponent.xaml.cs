@@ -22,12 +22,11 @@ namespace PointOfSale {
     public partial class OrderComponent : UserControl {
         public OrderComponent() {
             InitializeComponent();
-            Order order = new Order();
-            order.Add(new BriarheartBurger());
-            order.Add(new SailorSoda());
-            this.DataContext = order;
-            //IOrderItem b = new BriarheartBurger();
             
+            //IOrderItem b = new BriarheartBurger();
+
         }
+
+       
     }
 }

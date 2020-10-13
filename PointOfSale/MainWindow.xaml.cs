@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Entrees;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +27,9 @@ namespace PointOfSale {
             AddToOrderComponent.Child = orderSelect;
             var orderList = new OrderComponent();
             OrderListComponent.Child = orderList;
+            
+            Order order = new Order();
+            this.DataContext = order;
         }
     }
 }

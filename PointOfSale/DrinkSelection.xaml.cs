@@ -1,4 +1,5 @@
-﻿using BleakwindBuffet.Data.Drinks;
+﻿using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,33 +23,63 @@ namespace PointOfSale {
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e) {
-            this.Content = new MenuSelection();
+            DependencyObject parent = this;
+            do {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main) {
+                main.AddToOrderComponent.Child = new MenuSelection();
+            }
         }
 
         private void AppleJuiceButton_Click(object sender, RoutedEventArgs e) {
-            var drink = new AretinoAppleJuice();
-            this.DataContext = drink;
-            this.Content = new NonSodaDrink();
+            var sizeComponent = new NonSodaDrink();
+            var item = new AretinoAppleJuice();
+            sizeComponent.DataContext = item;
+            this.Content = sizeComponent;
+            if (DataContext is Order list) {
+                list.Add(item);
+            }
         }
 
         private void MilkButton_Click(object sender, RoutedEventArgs e) {
-            this.DataContext = new MarkarthMilk();
-            this.Content = new NonSodaDrink(); //come back to this
+            var sizeComponent = new NonSodaDrink();
+            var item = new MarkarthMilk();
+            sizeComponent.DataContext = item;
+            this.Content = sizeComponent;
+            if (DataContext is Order list) {
+                list.Add(item);
+            } //come back to fix ice eventually
         }
 
         private void CoffeeButton_Click(object sender, RoutedEventArgs e) {
-            this.DataContext = new CandlehearthCoffee();
-            this.Content = new NonSodaDrink();
+            var sizeComponent = new NonSodaDrink();
+            var item = new CandlehearthCoffee();
+            sizeComponent.DataContext = item;
+            this.Content = sizeComponent;
+            if (DataContext is Order list) {
+                list.Add(item);
+            }
         }
 
         private void SodaButton_Click(object sender, RoutedEventArgs e) {
-            this.DataContext = new SailorSoda();
-            this.Content = new SodaDrink();
+            var sizeComponent = new SodaDrink();
+            var item = new SailorSoda();
+            sizeComponent.DataContext = item;
+            this.Content = sizeComponent;
+            if (DataContext is Order list) {
+                list.Add(item);
+            }
         }
 
         private void WaterButton_Click(object sender, RoutedEventArgs e) {
-            this.DataContext = new WarriorWater();
-            this.Content = new NonSodaDrink();
+            var sizeComponent = new NonSodaDrink();
+            var item = new WarriorWater();
+            sizeComponent.DataContext = item;
+            this.Content = sizeComponent;
+            if (DataContext is Order list) {
+                list.Add(item);
+            }
         }
     }
 }

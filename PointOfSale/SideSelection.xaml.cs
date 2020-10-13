@@ -1,4 +1,5 @@
-﻿using BleakwindBuffet.Data.Sides;
+﻿using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Sides;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,27 +22,58 @@ namespace PointOfSale {
             InitializeComponent();
         }
         private void BackButton_Click(object sender, RoutedEventArgs e) {
-            this.Content = new MenuSelection();
+            DependencyObject parent = this;
+            do {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main) {
+                main.AddToOrderComponent.Child = new MenuSelection();
+            }
         }
 
         private void FriesButton_Click(object sender, RoutedEventArgs e) {
-            this.Content = new SideSizeSelection();
-            this.DataContext = new DragonbornWaffleFries();
+            var sizeComponent = new SideSizeSelection();
+            var item = new DragonbornWaffleFries();
+            sizeComponent.DataContext = item;
+            this.Content = sizeComponent;
+            if (DataContext is Order list) {
+                list.Add(item);
+            }
+
+            
         }
 
         private void GritsButton_Click(object sender, RoutedEventArgs e) {
-            this.Content = new SideSizeSelection();
-            this.DataContext = new MadOtarGrits();
+            var sizeComponent = new SideSizeSelection();
+            var item = new MadOtarGrits();
+            sizeComponent.DataContext = item;
+            this.Content = sizeComponent;
+            if (DataContext is Order list) {
+                list.Add(item);
+            }
+
+            
         }
 
         private void MiraakButton_Click(object sender, RoutedEventArgs e) {
-            this.Content = new SideSizeSelection();
-            this.DataContext = new FriedMiraak();
+            var sizeComponent = new SideSizeSelection();
+            var item = new FriedMiraak();
+            sizeComponent.DataContext = item;
+            this.Content = sizeComponent;
+            if (DataContext is Order list) {
+                list.Add(item);
+            }
+
         }
 
         private void SaladButton_Click(object sender, RoutedEventArgs e) {
-            this.Content = new SideSizeSelection();
-            this.DataContext = new VolkunSalad();
+            var sizeComponent = new SideSizeSelection();
+            var item = new VolkunSalad();
+            sizeComponent.DataContext = item;
+            this.Content = sizeComponent;
+            if (DataContext is Order list) {
+                list.Add(item);
+            }
         }
     }
 }

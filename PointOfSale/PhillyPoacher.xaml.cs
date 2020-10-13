@@ -15,13 +15,19 @@ namespace PointOfSale {
     /// <summary>
     /// Interaction logic for PhillyPoacher.xaml
     /// </summary>
-    public partial class PhillyPoacher : UserControl {
-        public PhillyPoacher() {
+    public partial class PhillyPoacherComponent : UserControl {
+        public PhillyPoacherComponent() {
             InitializeComponent();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e) {
-            this.Content = new EntreeSelection();
+            DependencyObject parent = this;
+            do {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main) {
+                main.AddToOrderComponent.Child = new MenuSelection();
+            }
         }
     }
 }

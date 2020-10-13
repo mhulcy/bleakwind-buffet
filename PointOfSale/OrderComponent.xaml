@@ -15,30 +15,35 @@
             <RowDefinition Height="25"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="50"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
-            <TextBlock  TextAlignment="Center" FontWeight="Bold" FontSize="20">
-                Order #47
-            </TextBlock>
-            <ListView Name ="orderList" Grid.Row="1" ItemsSource="{Binding}">
-                
-            </ListView>
-            <ListView  Grid.Row="1" Grid.Column="1">
-                <ListViewItem Content="{Binding Path=Subtotal}"></ListViewItem>
-                <ListViewItem Content="$6.44"></ListViewItem>
-                <ListViewItem Content="$1.82"></ListViewItem>
-        </ListView>
-        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Path=Subtotal}" >
-                
-            </TextBlock>
-        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="3" Grid.ColumnSpan="2">
-                Tax: $0.82
-            </TextBlock>
-        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="4" Grid.ColumnSpan="2"  >
-                Total: $10.55
-        </TextBlock>
 
+        <TextBlock  TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="3" Text="{Binding Path=Number, StringFormat=Order #{0}}"></TextBlock>
+        <ListView Name ="orderList" Grid.Row="1" ItemsSource="{Binding}" Grid.ColumnSpan="3">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding}"/>
+                        <TextBlock Text="{Binding Path=Price, StringFormat={}{0:C2}}"/>
+                        <StackPanel>
+                            <ListView ItemsSource="{Binding Path=SpecialInstructions}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Name="NewOrderButton" Grid.Row ="2" Grid.RowSpan="2">New Order</Button>
+        <Button Name="RemoveButton" Grid.Row ="4">Remove</Button>
+        
+        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Subtotal, StringFormat=Subtotal: {0:c}}"></TextBlock>
+
+
+        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Tax, StringFormat=Tax: {0:c}}"></TextBlock>
+
+
+        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Total, StringFormat=Total: {0:c}}"></TextBlock>
     </Grid>
 </UserControl>

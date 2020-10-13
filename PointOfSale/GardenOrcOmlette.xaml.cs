@@ -15,13 +15,19 @@ namespace PointOfSale {
     /// <summary>
     /// Interaction logic for GardenOrcOmlette.xaml
     /// </summary>
-    public partial class GardenOrcOmlette : UserControl {
-        public GardenOrcOmlette() {
+    public partial class GardenOrcOmletteComponent : UserControl {
+        public GardenOrcOmletteComponent() {
             InitializeComponent();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e) {
-            this.Content = new EntreeSelection();
+            DependencyObject parent = this;
+            do {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main) {
+                main.AddToOrderComponent.Child = new MenuSelection();
+            }
         }
     }
 }

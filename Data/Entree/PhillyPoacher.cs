@@ -35,6 +35,7 @@ namespace BleakwindBuffet.Data.Entrees {
                 if (!value)
                     SpecialInstructions.Add("Hold sirlion");
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
         /// <summary>
@@ -47,6 +48,7 @@ namespace BleakwindBuffet.Data.Entrees {
                 if (!value)
                     SpecialInstructions.Add("Hold onion");
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
         /// <summary>
@@ -59,6 +61,7 @@ namespace BleakwindBuffet.Data.Entrees {
                 if (!value)
                     SpecialInstructions.Add("Hold roll");
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
       

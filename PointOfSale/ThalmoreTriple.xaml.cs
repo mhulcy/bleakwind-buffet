@@ -15,13 +15,19 @@ namespace PointOfSale {
     /// <summary>
     /// Interaction logic for ThalmoreTriple.xaml
     /// </summary>
-    public partial class ThalmoreTriple : UserControl {
-        public ThalmoreTriple() {
+    public partial class ThalmoreTripleComponent : UserControl {
+        public ThalmoreTripleComponent() {
             InitializeComponent();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e) {
-            this.Content = new EntreeSelection();
+            DependencyObject parent = this;
+            do {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main) {
+                main.AddToOrderComponent.Child = new MenuSelection();
+            }
         }
     }
 }

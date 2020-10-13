@@ -53,12 +53,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.OrderingTests {
             Assert.PropertyChanged(order, "Subtotal", () => {
                 order.Remove(b);
             });
+            order.Add(b);
             Assert.PropertyChanged(order, "Total", () => {
                 order.Remove(b);
             });
+            order.Add(b);
             Assert.PropertyChanged(order, "Tax", () => {
                 order.Remove(b);
             });
+            order.Add(b);
             Assert.PropertyChanged(order, "Calories", () => {
                 order.Remove(b);
             });

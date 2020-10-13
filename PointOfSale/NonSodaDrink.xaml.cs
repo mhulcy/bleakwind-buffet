@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Drinks;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -25,6 +26,47 @@ namespace PointOfSale {
             
         }
 
-        
+        private void Small_Click(object sender, RoutedEventArgs e) {
+            Drink drink = (Drink)DataContext;
+            drink.Size = BleakwindBuffet.Data.Enums.Size.Small;
+
+            DependencyObject parent = this;
+            do {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main) {
+                main.AddToOrderComponent.Child = new MenuSelection();
+            }
+        }
+
+        private void Medium_Click(object sender, RoutedEventArgs e) {
+            Drink drink = (Drink)DataContext;
+            drink.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+
+            DependencyObject parent = this;
+            do {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main) {
+                main.AddToOrderComponent.Child = new MenuSelection();
+            }
+        }
+
+        private void Large_Click(object sender, RoutedEventArgs e) {
+            Drink drink = (Drink)DataContext;
+            drink.Size = BleakwindBuffet.Data.Enums.Size.Large;
+
+            DependencyObject parent = this;
+            do {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main) {
+                main.AddToOrderComponent.Child = new MenuSelection();
+            }
+        }
+
+        private void NoIceButton_Checked(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

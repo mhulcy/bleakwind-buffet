@@ -16,6 +16,7 @@ namespace BleakwindBuffet.Data {
         private double subtotal;
         public double Subtotal {
             get {
+                subtotal = 0;
                 foreach(IOrderItem i in this) {
                     subtotal += i.Price;
                 }
@@ -57,7 +58,7 @@ namespace BleakwindBuffet.Data {
             SalesTaxRate = .12;
             Number = nextOrderNumber;
             nextOrderNumber++;
-          
+            CollectionChanged += CollectionChangedListener;
 
         }
         public new void Add(IOrderItem item) {

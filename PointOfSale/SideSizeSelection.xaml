@@ -20,9 +20,9 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Row="1" Grid.ColumnSpan="2" Name="Small">Smalll</Button>
-        <Button Grid.Row="2" Grid.ColumnSpan="2" Name="Medium">Medium</Button>
-        <Button Grid.Row="3" Grid.ColumnSpan="2" Name="Large">Large</Button>
+        <Button Grid.Row="1" Grid.ColumnSpan="2" Name="Small" Click="Small_Click">Smalll</Button>
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Name="Medium" Click="Medium_Click">Medium</Button>
+        <Button Grid.Row="3" Grid.ColumnSpan="2" Name="Large" Click="Large_Click">Large</Button>
 
         <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.Row="0" Grid.ColumnSpan ="2">
             Select Size

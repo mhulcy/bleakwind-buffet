@@ -62,6 +62,7 @@ namespace BleakwindBuffet.Data.Drinks {
                 if (value)
                     SpecialInstructions.Add("Add ice");
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
         

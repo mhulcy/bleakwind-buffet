@@ -54,7 +54,7 @@ namespace BleakwindBuffet.Data.Sides {
         /// </summary>
         public VolkunSalad() {
             SpecialInstructions = new List<String>();
-            size = Size.Small;
+            Size = Size.Small;
             
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace BleakwindBuffet.Data.Sides {
         /// <param name="inpsize">input size</param>
         public VolkunSalad(Size inpsize) {
             SpecialInstructions = new List<String>();
-            size = inpsize;
+            Size = inpsize;
         }
         /// <summary>
         /// turns salad to a string

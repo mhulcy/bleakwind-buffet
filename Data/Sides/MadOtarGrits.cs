@@ -54,7 +54,7 @@ namespace BleakwindBuffet.Data.Sides {
         /// </summary>
         public MadOtarGrits() {
             SpecialInstructions = new List<String>();
-            size = Size.Small;
+            Size = Size.Small;
         }
         /// <summary>
         /// contructor to set size
@@ -62,7 +62,7 @@ namespace BleakwindBuffet.Data.Sides {
         /// <param name="inpsize">input size</param>
         public MadOtarGrits(Size inpsize) {
             SpecialInstructions = new List<String>();
-            size = inpsize;
+            Size = inpsize;
         }
 
         /// <summary>
