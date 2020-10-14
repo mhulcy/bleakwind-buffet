@@ -27,16 +27,23 @@
                     <StackPanel>
                         <TextBlock Text="{Binding}"/>
                         <TextBlock Text="{Binding Path=Price, StringFormat={}{0:C2}}"/>
-                        <StackPanel>
-                            <ListView ItemsSource="{Binding Path=SpecialInstructions}"/>
-                        </StackPanel>
+
+                        <ListView ItemsSource="{Binding Path=SpecialInstructions}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}"></TextBlock>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        
+                        
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Name="NewOrderButton" Grid.Row ="2" Grid.RowSpan="2">New Order</Button>
-        <Button Name="RemoveButton" Grid.Row ="4">Remove</Button>
+        <Button Name="NewOrderButton" Grid.Row ="2" Grid.RowSpan="2" Click="NewOrderButton_Click">New Order</Button>
+        <Button Name="RemoveButton" Grid.Row ="4" Click="RemoveButton_Click">Remove</Button>
         
         <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Subtotal, StringFormat=Subtotal: {0:c}}"></TextBlock>
 

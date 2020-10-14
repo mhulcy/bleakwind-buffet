@@ -17,6 +17,7 @@ namespace BleakwindBuffet.Data {
         /// Special preperation instructions
         /// </summary>
         List<string> SpecialInstructions { get; }
+        
 
         event PropertyChangedEventHandler PropertyChanged;
     }

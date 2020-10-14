@@ -18,15 +18,29 @@ namespace PointOfSale {
     /// Interaction logic for BriarheartBurger.xaml
     /// </summary>
     public partial class BriarheartBurgerComponent : UserControl {
-        public BriarheartBurgerComponent() {
+
+        private Order o;
+        public BriarheartBurgerComponent(Order order) {
             InitializeComponent();
+            o = order;
+            DataContext = new BriarheartBurger();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e) {
-            this.Content = new EntreeSelection();
+            DependencyObject parent = this;
+            do {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main) {
+                main.AddToOrderComponent.Child = new MenuSelection();
+            }
         }
 
         private void DoneButton_Click(object sender, RoutedEventArgs e) {
+
+            o.Add((BriarheartBurger)DataContext);
+
+
             DependencyObject parent = this;
             do {
                 parent = LogicalTreeHelper.GetParent(parent);

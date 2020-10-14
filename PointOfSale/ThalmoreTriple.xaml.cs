@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Entrees;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -16,11 +18,28 @@ namespace PointOfSale {
     /// Interaction logic for ThalmoreTriple.xaml
     /// </summary>
     public partial class ThalmoreTripleComponent : UserControl {
-        public ThalmoreTripleComponent() {
+
+        private Order o;
+        public ThalmoreTripleComponent(Order order) {
             InitializeComponent();
+            o = order;
+            DataContext = new ThalmorTriple();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e) {
+            DependencyObject parent = this;
+            do {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main) {
+                main.AddToOrderComponent.Child = new MenuSelection();
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            o.Add((ThalmorTriple)DataContext);
+
+
             DependencyObject parent = this;
             do {
                 parent = LogicalTreeHelper.GetParent(parent);

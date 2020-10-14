@@ -27,6 +27,20 @@ namespace PointOfSale {
 
         }
 
-       
+        private void NewOrderButton_Click(object sender, RoutedEventArgs e) {
+            DataContext = new Order();
+            DependencyObject parent = this;
+            do {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main) {
+                main.AddToOrderComponent.Child = new MenuSelection();
+            }
+        }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e) {
+            Order o = (Order)DataContext;
+            o.Remove((IOrderItem)orderList.SelectedItem);
+        }
     }
 }

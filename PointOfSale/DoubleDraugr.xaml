@@ -19,15 +19,15 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
-            <ToggleButton Name="NoBun" Grid.Row="1" >No Bun</ToggleButton>
-        <ToggleButton Name="NoKetchup" Grid.Row="2">No Ketchup</ToggleButton>
-        <ToggleButton Name="NoMustard" Grid.Row="3" >No Mustard</ToggleButton>
-        <ToggleButton Grid.Row="4" Name="NoPickle" >No Pickle</ToggleButton>
-        <ToggleButton Grid.Row="1" Grid.Column="1" Name ="NoCheese" >No Cheese</ToggleButton>
-        <ToggleButton Grid.Row="2" Grid.Column="1" Name ="NoTomato" >No Tomato</ToggleButton>
-        <ToggleButton Grid.Row="3" Grid.Column="1" Name ="NoLettuce" >No Lettuce</ToggleButton>
-        <ToggleButton Grid.Row="4" Grid.Column="1" Name ="NoMayo" >No Mayo</ToggleButton>
+
+        <ToggleButton Name="NoBun" Grid.Row="1" IsChecked="{Binding Path=Bun}">Bun</ToggleButton>
+        <ToggleButton Name="NoKetchup" Grid.Row="2" IsChecked="{Binding Path=Ketchup}">Ketchup</ToggleButton>
+        <ToggleButton Name="NoMustard" Grid.Row="3" IsChecked="{Binding Path=Mustard}">Mustard</ToggleButton>
+        <ToggleButton Grid.Row="4" Name="NoPickle" IsChecked="{Binding Path=Pickle}">Pickle</ToggleButton>
+        <ToggleButton Grid.Row="1" Grid.Column="1" Name ="NoCheese" IsChecked="{Binding Path=Cheese}">Cheese</ToggleButton>
+        <ToggleButton Grid.Row="2" Grid.Column="1" Name ="NoTomato" IsChecked="{Binding Path=Tomato}">Tomato</ToggleButton>
+        <ToggleButton Grid.Row="3" Grid.Column="1" Name ="NoLettuce" IsChecked="{Binding Path=Lettuce}">Lettuce</ToggleButton>
+        <ToggleButton Grid.Row="4" Grid.Column="1" Name ="NoMayo" IsChecked="{Binding Path=Mayo}">Mayo</ToggleButton>
         
         <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.Row="0" Grid.ColumnSpan ="2">
             Customize
@@ -35,7 +35,7 @@
         <Button Name="BackButton" Grid.Row ="5" Click="BackButton_Click">
             &lt;--
         </Button>
-        <Button Grid.Row ="5" Grid.Column="1">
+        <Button Grid.Row ="5" Grid.Column="1" Click="Button_Click">
             Done
         </Button>
     </Grid>

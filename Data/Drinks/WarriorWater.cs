@@ -58,13 +58,14 @@ namespace BleakwindBuffet.Data.Drinks {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
+        private bool lemon;
         /// <summary>
         /// if the water should have a lemon
         /// </summary>
         public bool Lemon {
-            get { return Lemon; }
+            get { return lemon; }
             set {
-                Lemon = value;
+                lemon = value;
                 if (value)
                     SpecialInstructions.Add("Add lemon");
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));

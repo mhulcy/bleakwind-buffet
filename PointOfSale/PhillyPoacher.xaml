@@ -20,9 +20,9 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ToggleButton Grid.Row="1" Grid.ColumnSpan="2" Name="NoSirloin" >No Sirloin</ToggleButton>
-        <ToggleButton Grid.Row="2" Grid.ColumnSpan="2" Name="NoOnion">No Onion</ToggleButton>
-        <ToggleButton Grid.Row="3" Grid.ColumnSpan="2" Name="NoRoll" >No Roll</ToggleButton>
+        <ToggleButton Grid.Row="1" Grid.ColumnSpan="2" Name="NoSirloin" IsChecked="{Binding Path=Sirlion}">Sirloin</ToggleButton>
+        <ToggleButton Grid.Row="2" Grid.ColumnSpan="2" Name="NoOnion" IsChecked="{Binding Path=Onion}">Onion</ToggleButton>
+        <ToggleButton Grid.Row="3" Grid.ColumnSpan="2" Name="NoRoll" IsChecked="{Binding Path=Roll}">Roll</ToggleButton>
 
         <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.Row="0" Grid.ColumnSpan ="2">
             Customize
@@ -30,7 +30,7 @@
         <Button Name="BackButton" Grid.Row ="5" Click="BackButton_Click">
             &lt;--
         </Button>
-        <Button Grid.Row ="5" Grid.Column="1">
+        <Button Grid.Row ="5" Grid.Column="1" Click="Button_Click">
             Done
         </Button>
     </Grid>

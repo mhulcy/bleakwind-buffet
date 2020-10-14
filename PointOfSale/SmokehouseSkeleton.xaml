@@ -20,10 +20,10 @@
         </Grid.ColumnDefinitions>
 
 
-        <ToggleButton Grid.Row="1" Grid.Column="1" Name="NoEgg" >No Egg</ToggleButton>
-        <ToggleButton Grid.Row="1" Grid.Column="0" Name="NoSausage" >No Sausage</ToggleButton>
-        <ToggleButton Grid.Row="2" Grid.Column="1" Name="NoHashbrown" >No Hashbrown</ToggleButton>
-        <ToggleButton Grid.Row="2" Grid.Column="0" Name="NoPancake" >No Pancake</ToggleButton>
+        <ToggleButton Grid.Row="1" Grid.Column="1" Name="NoEgg" IsChecked="{Binding Path=Egg}">Egg</ToggleButton>
+        <ToggleButton Grid.Row="1" Grid.Column="0" Name="NoSausage" IsChecked="{Binding Path=SausageLink}">SausageLink</ToggleButton>
+        <ToggleButton Grid.Row="2" Grid.Column="1" Name="NoHashbrown"  IsChecked="{Binding Path=HashBrowns}">Hashbrowns</ToggleButton>
+        <ToggleButton Grid.Row="2" Grid.Column="0" Name="NoPancake"  IsChecked="{Binding Path=Pancake}">Pancake</ToggleButton>
 
         <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.Row="0" Grid.ColumnSpan ="2">
             Customize
@@ -31,7 +31,7 @@
         <Button Name="BackButton" Grid.Row ="5" Click="BackButton_Click">
             &lt;--
         </Button>
-        <Button Grid.Row ="5" Grid.Column="1">
+        <Button Grid.Row ="3" Grid.Column="1" Height="50" VerticalAlignment="Top" Click="Button_Click">
             Done
         </Button>
     </Grid>

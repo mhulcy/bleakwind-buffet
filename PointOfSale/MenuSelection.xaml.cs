@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,7 +22,7 @@ namespace PointOfSale {
         }
 
         private void Entree_Click(object sender, RoutedEventArgs e) {
-            this.Content = new EntreeSelection();
+            this.Content = new EntreeSelection((Order)DataContext);
         }
 
         private void Side_Click(object sender, RoutedEventArgs e) {
@@ -29,7 +30,7 @@ namespace PointOfSale {
         }
 
         private void Drink_Click(object sender, RoutedEventArgs e) {
-            this.Content = new DrinkSelection();
+            this.Content = new DrinkSelection((Order)DataContext);
         }
     }
 }

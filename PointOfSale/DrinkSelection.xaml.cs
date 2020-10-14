@@ -18,8 +18,12 @@ namespace PointOfSale {
     /// Interaction logic for DrinkSelection.xaml
     /// </summary>
     public partial class DrinkSelection : UserControl {
-        public DrinkSelection() {
+
+        private Order o;
+        public DrinkSelection(Order order) {
             InitializeComponent();
+            o = order;
+
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e) {
@@ -33,53 +37,43 @@ namespace PointOfSale {
         }
 
         private void AppleJuiceButton_Click(object sender, RoutedEventArgs e) {
-            var sizeComponent = new NonSodaDrink();
+            var sizeComponent = new NonSodaDrink(o);
             var item = new AretinoAppleJuice();
             sizeComponent.DataContext = item;
             this.Content = sizeComponent;
-            if (DataContext is Order list) {
-                list.Add(item);
-            }
+         
         }
 
         private void MilkButton_Click(object sender, RoutedEventArgs e) {
-            var sizeComponent = new NonSodaDrink();
+            var sizeComponent = new NonSodaDrink(o);
             var item = new MarkarthMilk();
             sizeComponent.DataContext = item;
             this.Content = sizeComponent;
-            if (DataContext is Order list) {
-                list.Add(item);
-            } //come back to fix ice eventually
+            //come back to fix ice eventually
         }
 
         private void CoffeeButton_Click(object sender, RoutedEventArgs e) {
-            var sizeComponent = new NonSodaDrink();
+            var sizeComponent = new NonSodaDrink(o);
             var item = new CandlehearthCoffee();
             sizeComponent.DataContext = item;
             this.Content = sizeComponent;
-            if (DataContext is Order list) {
-                list.Add(item);
-            }
+            
         }
 
         private void SodaButton_Click(object sender, RoutedEventArgs e) {
-            var sizeComponent = new SodaDrink();
+            var sizeComponent = new SodaDrink(o);
             var item = new SailorSoda();
             sizeComponent.DataContext = item;
             this.Content = sizeComponent;
-            if (DataContext is Order list) {
-                list.Add(item);
-            }
+            
         }
 
         private void WaterButton_Click(object sender, RoutedEventArgs e) {
-            var sizeComponent = new NonSodaDrink();
+            var sizeComponent = new WarriorWaterControl(o);
             var item = new WarriorWater();
             sizeComponent.DataContext = item;
             this.Content = sizeComponent;
-            if (DataContext is Order list) {
-                list.Add(item);
-            }
+            
         }
     }
 }

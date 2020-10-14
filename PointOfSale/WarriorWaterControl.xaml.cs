@@ -15,14 +15,15 @@ using System.Windows.Shapes;
 
 namespace PointOfSale {
     /// <summary>
-    /// Interaction logic for NonSodaDrink.xaml
+    /// Interaction logic for WarriorWaterControl.xaml
     /// </summary>
-    public partial class NonSodaDrink : UserControl {
+    public partial class WarriorWaterControl : UserControl {
 
         private Order o;
-        public NonSodaDrink(Order order) {
+        public WarriorWaterControl(Order order) {
             InitializeComponent();
             o = order;
+            DataContext = new WarriorWater();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e) {
@@ -33,7 +34,6 @@ namespace PointOfSale {
             if (parent is MainWindow main) {
                 main.AddToOrderComponent.Child = new MenuSelection();
             }
-
         }
 
         private void Small_Click(object sender, RoutedEventArgs e) {
@@ -76,10 +76,6 @@ namespace PointOfSale {
             if (parent is MainWindow main) {
                 main.AddToOrderComponent.Child = new MenuSelection();
             }
-        }
-
-        private void NoIceButton_Checked(object sender, RoutedEventArgs e) {
-
         }
     }
 }

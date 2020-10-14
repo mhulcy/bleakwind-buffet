@@ -1,38 +1,41 @@
-﻿<UserControl x:Class="PointOfSale.GardenOrcOmletteComponent"
+﻿<UserControl x:Class="PointOfSale.WarriorWaterControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="500" Background="White">
+             d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
-
             <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-
-        <ToggleButton Grid.Row="1" Grid.Column="1" Name ="NoBroccoli" IsChecked="{Binding Path=Broccoli}">Broccoli</ToggleButton>
-        <ToggleButton Grid.Row="1" Grid.Column="0" Name ="NoTomato" IsChecked="{Binding Path=Tomato}">Tomato</ToggleButton>
-        <ToggleButton Grid.Row="2" Grid.Column="1" Name ="NoMushroom" IsChecked="{Binding Path=Mushrooms}">Mushrooms</ToggleButton>
-        <ToggleButton Grid.Row="2" Grid.Column="0" Name ="NoCheddar" IsChecked="{Binding Path=Cheddar}">Cheddar</ToggleButton>
+        <Button Grid.Row="1" Grid.ColumnSpan="3" Name="Small" Click="Small_Click">Small</Button>
+        <Button Grid.Row="2" Grid.ColumnSpan="3" Name="Medium" Click="Medium_Click">Medium</Button>
+        <Button Grid.Row="3" Grid.ColumnSpan="3" Name="Large" Click="Large_Click">Large</Button>
 
         <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.Row="0" Grid.ColumnSpan ="2">
-            Customize
+            Select Size
         </TextBlock>
         <Button Name="BackButton" Grid.Row ="5" Click="BackButton_Click">
             &lt;--
         </Button>
-        <Button Grid.Row ="3" Grid.Column="1" Height="50" VerticalAlignment="Top" Click="Button_Click">
-            Done
-        </Button>
+        <ToggleButton Name="NoIceButton" Grid.Row ="5" Grid.Column="2" IsChecked="{Binding Path=Ice}">
+            Ice
+        </ToggleButton>
+        <ToggleButton Name="NoLemonButton" Grid.Row ="5" Grid.Column="1" IsChecked="{Binding Path=Lemon}">
+            Lemon
+        </ToggleButton>
     </Grid>
 </UserControl>

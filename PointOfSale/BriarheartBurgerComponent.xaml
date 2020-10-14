@@ -18,11 +18,11 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
-            <ToggleButton Name="NoBun" Height="60" IsChecked="{Binding Path=Bun}" Checked="NoBun_Checked">No Bun</ToggleButton>
-            <ToggleButton Name="NoKetchup" Height="60">No Ketchup</ToggleButton>
-            <ToggleButton Name="NoMustard" Height="60">No Mustard</ToggleButton>
-            <ToggleButton Name="NoPickle" Height="60">No Pickle</ToggleButton>
-            <ToggleButton Name ="NoCheese" Height="60">No Cheese</ToggleButton> 
+            <ToggleButton Name="NoBun" Height="60" IsChecked="{Binding Path=Bun}">Bun</ToggleButton>
+            <ToggleButton Name="NoKetchup" Height="60" IsChecked="{Binding Path=Ketchup}">Ketchup</ToggleButton>
+            <ToggleButton Name="NoMustard" Height="60" IsChecked="{Binding Path=Mustard}">Mustard</ToggleButton>
+            <ToggleButton Name="NoPickle" Height="60" IsChecked="{Binding Path=Pickle}">Pickle</ToggleButton>
+            <ToggleButton Name ="NoCheese" Height="60" IsChecked="{Binding Path=Cheese}">Cheese</ToggleButton> 
         </StackPanel>
         <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.Row="0" Grid.ColumnSpan ="2">
             Customize

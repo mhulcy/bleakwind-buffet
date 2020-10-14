@@ -18,8 +18,11 @@ namespace PointOfSale {
     /// Interaction logic for EntreeSelection.xaml
     /// </summary>
     public partial class EntreeSelection : UserControl {
-        public EntreeSelection() {
+
+        private Order o;
+        public EntreeSelection(Order order) {
             InitializeComponent();
+            o = order;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e) {
@@ -34,53 +37,43 @@ namespace PointOfSale {
 
         private void BriarheartButton_Click(object sender, RoutedEventArgs e) {
 
-            var itemComponent = new BriarheartBurgerComponent();
+            var itemComponent = new BriarheartBurgerComponent(o);
             var item = new BriarheartBurger();
             itemComponent.DataContext = item;
             this.Content = itemComponent;
-            if (DataContext is Order list) {
-                list.Add(item);
-            }
+            
         }
 
         private void SmokehouseButton_Click(object sender, RoutedEventArgs e) {
-            var itemComponent = new SmokehouseSkeletonComponent();
+            var itemComponent = new SmokehouseSkeletonComponent(o);
             var item = new SmokehouseSkeleton();
             itemComponent.DataContext = item;
             this.Content = itemComponent;
-            if (DataContext is Order list) {
-                list.Add(item);
-            }
+            
         }
 
         private void DoubleButton_Click(object sender, RoutedEventArgs e) {
-            var itemComponent = new DoubleDraugrComponent();
+            var itemComponent = new DoubleDraugrComponent(o);
             var item = new DoubleDraugr();
             itemComponent.DataContext = item;
             this.Content = itemComponent;
-            if (DataContext is Order list) {
-                list.Add(item);
-            }
+            
         }
 
         private void TripleButton_Click(object sender, RoutedEventArgs e) {
-            var itemComponent = new ThalmoreTripleComponent();
+            var itemComponent = new ThalmoreTripleComponent(o);
             var item = new ThalmorTriple();
             itemComponent.DataContext = item;
             this.Content = itemComponent;
-            if (DataContext is Order list) {
-                list.Add(item);
-            }
+            
         }
 
         private void OmletteButton_Click(object sender, RoutedEventArgs e) {
-            var itemComponent = new GardenOrcOmletteComponent();
+            var itemComponent = new GardenOrcOmletteComponent(o);
             var item = new GardenOrcOmlette();
             itemComponent.DataContext = item;
             this.Content = itemComponent;
-            if (DataContext is Order list) {
-                list.Add(item);
-            }
+            
         }
 
         private void TboneButton_Click(object sender, RoutedEventArgs e) {
@@ -99,13 +92,11 @@ namespace PointOfSale {
         }
 
         private void PhillyButton_Click(object sender, RoutedEventArgs e) {
-            var itemComponent = new PhillyPoacherComponent();
+            var itemComponent = new PhillyPoacherComponent(o);
             var item = new PhillyPoacher();
             itemComponent.DataContext = item;
             this.Content = itemComponent;
-            if (DataContext is Order list) {
-                list.Add(item);
-            }
+            
         }
     }
 }
