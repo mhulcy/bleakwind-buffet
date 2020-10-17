@@ -17,11 +17,12 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="70"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="50"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBlock  TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="3" Text="{Binding Path=Number, StringFormat=Order #{0}}"></TextBlock>
-        <ListView Name ="orderList" Grid.Row="1" ItemsSource="{Binding}" Grid.ColumnSpan="3">
+        <TextBlock  TextAlignment="Center" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="2" Text="{Binding Path=Number, StringFormat=Order #{0}}"></TextBlock>
+        <ListView Name ="orderList" Grid.Row="1" ItemsSource="{Binding}" Grid.ColumnSpan="4">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -41,16 +42,16 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-        <Button Name="NewOrderButton" Grid.Row ="2" Grid.RowSpan="2" Click="NewOrderButton_Click">New Order</Button>
+     
+        <Button Name="NewOrderButton" Grid.Row ="2" Grid.RowSpan="2" Click="NewOrderButton_Click">Cancel Order</Button>
         <Button Name="RemoveButton" Grid.Row ="4" Click="RemoveButton_Click">Remove</Button>
         
-        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Subtotal, StringFormat=Subtotal: {0:c}}"></TextBlock>
+        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Path=Subtotal, StringFormat=Subtotal: {0:c}}"></TextBlock>
 
 
-        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Tax, StringFormat=Tax: {0:c}}"></TextBlock>
+        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Path=Tax, StringFormat=Tax: {0:c}}"></TextBlock>
 
 
-        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Total, StringFormat=Total: {0:c}}"></TextBlock>
+        <TextBlock TextAlignment="Right"  FontSize="12" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Path=Total, StringFormat=Total: {0:c}}"></TextBlock>
     </Grid>
 </UserControl>

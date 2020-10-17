@@ -31,5 +31,12 @@ namespace PointOfSale {
             Order order = new Order();
             this.DataContext = order;
         }
+
+        private void CompleteOrderButton_Click(object sender, RoutedEventArgs e) {
+            Order o = (Order)DataContext;
+            PaymentOptions payment = new PaymentOptions(AddToOrderComponent);
+            payment.DataContext = o;
+            AddToOrderComponent.Child = payment;
+        }
     }
 }

@@ -20,8 +20,12 @@
         </TextBlock>
         <Border Name ="AddToOrderComponent" Grid.Row="1" Grid.Column="0"></Border>
         <Border Name ="OrderListComponent" Grid.Row="1" Grid.Column="1"></Border>
-        
-        
+        <Button Name ="CompleteOrderButton" Grid.Row="0" Grid.Column="1" FontSize="10" Click="CompleteOrderButton_Click">
+            <TextBlock Text="Complete Order" TextWrapping="Wrap" FontSize="12" FontWeight="Bold"/>
+        </Button>
+
+
+
     </Grid>
 </Window>
 

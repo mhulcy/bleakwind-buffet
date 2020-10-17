@@ -42,5 +42,7 @@ namespace PointOfSale {
             Order o = (Order)DataContext;
             o.Remove((IOrderItem)orderList.SelectedItem);
         }
+
+        
     }
 }

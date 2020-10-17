@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="PointOfSale.ComboComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="500" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Select an Entree" HorizontalAlignment="Center" FontSize="20" Grid.Row="1" FontWeight="Bold"></TextBlock>
+        <TextBlock Text="Combo Creator" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" ></TextBlock>
+        <TextBlock Text="Select a Side" HorizontalAlignment="Center" Grid.Row="3" FontSize="20" FontWeight="Bold"></TextBlock>
+        <TextBlock Text="Select a Drink" HorizontalAlignment="Center" Grid.Row="5" FontSize="20" FontWeight="Bold"></TextBlock>
+        <ComboBox Name="EntreeComboBox" Grid.Row="2" SelectionChanged="EntreeComboBox_SelectionChanged">
+            <ComboBoxItem Content = "Briarheart Burger" />
+            <ComboBoxItem Content = "Double Draugr" />
+            <ComboBoxItem Content = "Thalmore Triple" />
+            <ComboBoxItem Content = "Garden Orc Omlette" />
+            <ComboBoxItem Content = "Philly Poacher" />
+            <ComboBoxItem Content = "Thugs T-Bone" />
+            <ComboBoxItem Content = "Smokehouse Skeleton" />
+        </ComboBox>
+        <ComboBox Name="SideComboBox" Grid.Row="4" SelectionChanged="EntreeComboBox_SelectionChanged">
+            <ComboBoxItem Content = "Dragonborn Waffle Fries" />
+            <ComboBoxItem Content = "Fried Miraak" />
+            <ComboBoxItem Content = "Mad Otar Grits" />
+            <ComboBoxItem Content = "Volkun Salad" />
+        </ComboBox>
+        <ComboBox Name="DrinkComboBox" Grid.Row="6" SelectionChanged="EntreeComboBox_SelectionChanged">
+            <ComboBoxItem Content = "Warrior Water" />
+            <ComboBoxItem Content = "Arentino Apple Juice" />
+            <ComboBoxItem Content = "Candleheart Coffee" />
+            <ComboBoxItem Content = "Sailor Soda" />
+            <ComboBoxItem Content = "Markarth Milk" />
+        </ComboBox>
+        <Button Name="CreateComboButton" Grid.RowSpan="2" Width="150" HorizontalAlignment="Right" FontSize="20" Click="CreateComboButton_Click">Create combo</Button>
+    </Grid>
+</UserControl>

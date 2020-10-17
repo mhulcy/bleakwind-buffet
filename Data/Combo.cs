@@ -133,5 +133,9 @@ namespace BleakwindBuffet.Data {
             Entree = e;
         }
 
+        public override string ToString() {
+            return "Combo";
+        }
+
     }
 }

@@ -32,5 +32,10 @@ namespace PointOfSale {
         private void Drink_Click(object sender, RoutedEventArgs e) {
             this.Content = new DrinkSelection((Order)DataContext);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            this.Content = new ComboComponent();
+
+        }
     }
 }
