@@ -82,9 +82,9 @@ namespace BleakwindBuffet.Data.Drinks {
 
         public WarriorWater() {
             SpecialInstructions = new List<String>();
-            Price = 1.42;
+            Price = 0.00;
             size = Size.Small;
-            Calories = 117;
+            Calories = 0;
             Ice = true;
             Lemon = false;
         }
@@ -94,9 +94,9 @@ namespace BleakwindBuffet.Data.Drinks {
         /// <param name="inpsize">size to be set</param>
         public WarriorWater(Size inpsize) {
             SpecialInstructions = new List<String>();
-            Price = 1.42;
+            Price = 0.00;
             size = inpsize;
-            Calories = 117;
+            Calories = 0;
             Ice = true;
             Lemon = false;
         }
