@@ -161,10 +161,12 @@ namespace BleakwindBuffet.Data.Entrees {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
+        public string FoodType { get; }
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
         public ThalmorTriple() {
+            FoodType = "Entree";
             SpecialInstructions = new List<String>();
             Price = 8.32;
             Calories = 943;

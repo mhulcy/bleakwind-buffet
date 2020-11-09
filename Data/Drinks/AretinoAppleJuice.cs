@@ -18,7 +18,7 @@ namespace BleakwindBuffet.Data.Drinks {
         /// <summary>
         /// list of special instructions
         /// </summary>
-        public override List<String> SpecialInstructions { get;  }
+        public override List<String> SpecialInstructions { get; }
 
         private bool ice;
         private Size size;
@@ -35,7 +35,7 @@ namespace BleakwindBuffet.Data.Drinks {
                     Price = 0.62;
                     Calories = 44;
                     size = Size.Small;
-                   
+
                 }
                 else if (value == Size.Medium) {
                     Price = 0.87;
@@ -65,12 +65,15 @@ namespace BleakwindBuffet.Data.Drinks {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
-        
+
+        public string FoodType { get; }
+
 
         /// <summary>
         /// constructor to set defualt values
         /// </summary>
         public AretinoAppleJuice() {
+            FoodType = "Drink";
             SpecialInstructions = new List<String>();
             Price = 0.62;
             size = Size.Small;
@@ -82,6 +85,7 @@ namespace BleakwindBuffet.Data.Drinks {
         /// </summary>
         /// <param name="inpsize">input size</param>
         public AretinoAppleJuice(Size inpsize) {
+            FoodType = "Drink";
             SpecialInstructions = new List<String>();
             Price = 0.62;
             size = inpsize;

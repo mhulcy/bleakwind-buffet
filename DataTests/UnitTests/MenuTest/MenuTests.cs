@@ -6,6 +6,7 @@ using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Drinks;
 using System.Collections.Generic;
 using BleakwindBuffet.Data.Sides;
+using System.Linq;
 //using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.DataTests.UnitTests.MenuTest {
@@ -166,6 +167,52 @@ namespace BleakwindBuffet.DataTests.UnitTests.MenuTest {
                     Assert.Equal(item.ToString(), new SailorSoda(Size.Large, SodaFlavor.Watermelon).ToString());
                 });
 
+        }
+
+        [Theory]
+        [InlineData("Philly", "Philly Poacher")]
+        [InlineData("Burger", "Briarheart Burger")]
+        [InlineData("T-Bone", "Thugs T-Bone")] 
+        public void SearchReturnsCorrectList(string search, string expected) {
+            IEnumerable<IOrderItem> items = Menu.Search(search);
+            List<IOrderItem> itemsList = items.ToList<IOrderItem>();
+            Assert.Equal(expected, itemsList.Find(x => x.ToString() == expected).ToString()); 
+        }
+
+        [Fact]
+        public void FoodTypeShouldReturnCorrectList() {
+            string[] foodTypes = new string[1];
+            foodTypes[0] = "Entree";
+            IEnumerable<IOrderItem> OrderItems = Menu.FilterByFoodType(Menu.FullMenu(), foodTypes);
+            foreach(IOrderItem item in OrderItems) {
+                Assert.IsAssignableFrom<Entree>(item);
+            }
+            foodTypes[0] = "Drink";
+            OrderItems = Menu.FilterByFoodType(Menu.FullMenu(), foodTypes);
+            foreach (IOrderItem item in OrderItems) {
+                Assert.IsAssignableFrom<Drink>(item);
+            }
+            foodTypes[0] = "Side";
+            OrderItems = Menu.FilterByFoodType(Menu.FullMenu(), foodTypes);
+            foreach (IOrderItem item in OrderItems) {
+                Assert.IsAssignableFrom<Side>(item);
+            }
+        }
+
+        [Fact]
+        public void PriceRangeShouldReturnCorrectList() {
+            IEnumerable<IOrderItem> OrderItems = Menu.FilterByPrice(Menu.FullMenu(), 0, 5);
+            foreach (IOrderItem item in OrderItems) {
+                Assert.InRange(item.Price, 0, 5);
+            }
+        }
+
+        [Fact]
+        public void CalorieRangeShouldReturnCorrectList() {
+            IEnumerable<IOrderItem> OrderItems = Menu.FilterByPrice(Menu.FullMenu(), 0, 400);
+            foreach (IOrderItem item in OrderItems) {
+                Assert.InRange((int)item.Calories, 0, 400);
+            }
         }
     }
 }

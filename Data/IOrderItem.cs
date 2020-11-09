@@ -17,7 +17,10 @@ namespace BleakwindBuffet.Data {
         /// Special preperation instructions
         /// </summary>
         List<string> SpecialInstructions { get; }
-        
+
+        string ToString();
+
+        string FoodType { get; }
 
         event PropertyChangedEventHandler PropertyChanged;
     }

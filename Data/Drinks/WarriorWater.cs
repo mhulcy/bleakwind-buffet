@@ -76,11 +76,14 @@ namespace BleakwindBuffet.Data.Drinks {
         /// list of special preperation instructions
         /// </summary>
         public override List<String> SpecialInstructions { get; }
+
+        public string FoodType { get; }
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
 
         public WarriorWater() {
+            FoodType = "Drink";
             SpecialInstructions = new List<String>();
             Price = 0.00;
             size = Size.Small;
@@ -93,6 +96,7 @@ namespace BleakwindBuffet.Data.Drinks {
         /// </summary>
         /// <param name="inpsize">size to be set</param>
         public WarriorWater(Size inpsize) {
+            FoodType = "Drink";
             SpecialInstructions = new List<String>();
             Price = 0.00;
             size = inpsize;

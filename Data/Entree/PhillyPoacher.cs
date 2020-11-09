@@ -65,10 +65,12 @@ namespace BleakwindBuffet.Data.Entrees {
             }
         }
       
+        public string FoodType { get; }
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
         public PhillyPoacher() {
+            FoodType = "Entree";
             SpecialInstructions = new List<String>();
             Price = 7.23;
             Calories = 784;

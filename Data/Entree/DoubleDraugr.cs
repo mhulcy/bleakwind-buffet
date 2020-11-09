@@ -134,12 +134,14 @@ namespace BleakwindBuffet.Data.Entrees {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
-      
+        public string FoodType { get; }
+        
         /// <summary>
         /// Constructor for doubleDraugr
         /// Sets up the defualt values
         /// </summary>
         public DoubleDraugr() {
+            FoodType = "Entree";
             SpecialInstructions = new List<String>();
             Price = 7.32;
             Calories = 843;

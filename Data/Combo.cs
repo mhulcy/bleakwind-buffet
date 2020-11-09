@@ -125,8 +125,10 @@ namespace BleakwindBuffet.Data {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
+        public string FoodType { get; }
 
         public Combo(Drink d, Side s, Entree e) {
+            FoodType = "Combo";
             SpecialInstructions = new List<string>();
             Drink = d;
             Side = s;

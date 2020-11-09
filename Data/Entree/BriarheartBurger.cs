@@ -93,10 +93,12 @@ namespace BleakwindBuffet.Data.Entrees {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
+        public string FoodType { get; }
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
         public BriarheartBurger() {
+            FoodType = "Entree";
             Price = 6.32;
             Calories = 743;
             Bun = true;

@@ -73,11 +73,12 @@ namespace BleakwindBuffet.Data.Entrees {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pancake"));
             }
         }
-      
+        public string FoodType { get; }
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
         public SmokehouseSkeleton() {
+            FoodType = "Entree";
             SpecialInstructions = new List<String>();
             Price = 5.62;
             Calories = 602;

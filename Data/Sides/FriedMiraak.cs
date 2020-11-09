@@ -50,10 +50,13 @@ namespace BleakwindBuffet.Data.Sides {
         /// list of special preperation instructions
         /// </summary>
         public override List<String> SpecialInstructions { get; }
+
+        public string FoodType { get; }
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
         public FriedMiraak() {
+            FoodType = "Side";
             SpecialInstructions = new List<String>();
             Size = Size.Small;
 
@@ -63,6 +66,7 @@ namespace BleakwindBuffet.Data.Sides {
         /// </summary>
         /// <param name="inpsize">input size</param>
         public FriedMiraak(Size inpsize) {
+            FoodType = "Side";
             SpecialInstructions = new List<String>();
             Size = inpsize;
         }
