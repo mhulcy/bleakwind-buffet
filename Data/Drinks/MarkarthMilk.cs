@@ -65,10 +65,12 @@ namespace BleakwindBuffet.Data.Drinks {
         public override List<String> SpecialInstructions { get; }
 
         public string FoodType { get; }
+        public override string  Description { get; }
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
         public MarkarthMilk() {
+            Description = "Hormone-free organic 2% milk.";
             FoodType = "Drink";
             SpecialInstructions = new List<String>();
             Price = 1.05;
@@ -81,6 +83,7 @@ namespace BleakwindBuffet.Data.Drinks {
         /// </summary>
         /// <param name="inpsize">input size</param>
         public MarkarthMilk(Size inpsize) {
+            Description = "Hormone-free organic 2% milk.";
             FoodType = "Drink";
             SpecialInstructions = new List<String>();
             Price = 1.05;

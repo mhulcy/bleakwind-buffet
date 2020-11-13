@@ -162,10 +162,12 @@ namespace BleakwindBuffet.Data.Entrees {
             }
         }
         public string FoodType { get; }
+        public override string Description { get; }
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
         public ThalmorTriple() {
+            Description = "Think you are strong enough to take on the Thalmor? Inlcudes two 1/4lb patties with a 1/2lb patty inbetween with ketchup, mustard, pickle, cheese, tomato, lettuce, mayo, bacon, and an egg.";
             FoodType = "Entree";
             SpecialInstructions = new List<String>();
             Price = 8.32;

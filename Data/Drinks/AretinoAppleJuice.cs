@@ -67,12 +67,14 @@ namespace BleakwindBuffet.Data.Drinks {
         }
 
         public string FoodType { get; }
+        public override string Description { get; }
 
 
         /// <summary>
         /// constructor to set defualt values
         /// </summary>
         public AretinoAppleJuice() {
+            Description = "Fresh squeezed apple juice.";
             FoodType = "Drink";
             SpecialInstructions = new List<String>();
             Price = 0.62;
@@ -85,6 +87,7 @@ namespace BleakwindBuffet.Data.Drinks {
         /// </summary>
         /// <param name="inpsize">input size</param>
         public AretinoAppleJuice(Size inpsize) {
+            Description = "Fresh squeezed apple juice.";
             FoodType = "Drink";
             SpecialInstructions = new List<String>();
             Price = 0.62;

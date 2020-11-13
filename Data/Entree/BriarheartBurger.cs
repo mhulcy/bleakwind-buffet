@@ -94,10 +94,12 @@ namespace BleakwindBuffet.Data.Entrees {
             }
         }
         public string FoodType { get; }
+        public override string Description { get; }
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
         public BriarheartBurger() {
+            Description = "Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.";
             FoodType = "Entree";
             Price = 6.32;
             Calories = 743;

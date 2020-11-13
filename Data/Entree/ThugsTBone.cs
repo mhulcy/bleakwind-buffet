@@ -19,11 +19,13 @@ namespace BleakwindBuffet.Data.Entrees {
         public override List<String> SpecialInstructions { get; }
 
         public string FoodType { get; }
+        public override string Description { get; }
 
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
         public ThugsTBone() {
+            Description = "Juicy T-Bone, not much else to say.";
             FoodType = "Entree";
             Price = 6.44;
             Calories = 982;

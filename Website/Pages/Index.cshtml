@@ -17,7 +17,7 @@
 
     
     <div class="filter">
-        <h4 style="float: left">Price</h4>
+        <h4 style="float: left; padding-right: 30px">Price</h4>
         Between
         <input name="PriceMin" type="number" min="0" max="100" step="0.1" placeholder="min" />
         and
@@ -27,7 +27,7 @@
     </div>
     
     <div class="filter">
-        <h4 style="float: left">Calories</h4>
+        <h4 style="float: left; padding-right: 30px">Calories</h4>
         Between
         <input name="CaloriesMin" type="number" min="0" max="1000" step="0.1" placeholder="min" />
         and
@@ -46,17 +46,55 @@
 
 </form>
 
-<ul class="menu">
-    @foreach(BleakwindBuffet.Data.IOrderItem item in Model.OrderItems) {
-        <li>
-            <div class="orderitem">
-                <p class="lead">@item.ToString()</p>
-                <p>Price: $@item.Price</p>
-                <p>Calories: @item.Calories</p>
-            </div>
-        </li>
-    }
-</ul>
+
+    
+<div class="flex-columns">
+    <div>
+        <h1>Entrees</h1>
+        @foreach (BleakwindBuffet.Data.IOrderItem item in Model.OrderItems) {
+            var entree = item as BleakwindBuffet.Data.Entrees.Entree;
+            if (entree != null) {
+                <div class="orderitem">
+                    <p class="lead">@item.ToString()</p>
+                    <p>Price: $@item.Price</p>
+                    <p>Calories: @item.Calories</p>
+                    <p>Description: @item.Description</p>
+                </div>
+            }
+        }
+    </div>
+    <div>
+        <h1>Sides</h1>
+        @foreach (BleakwindBuffet.Data.IOrderItem item in Model.OrderItems) {
+            var side = item as BleakwindBuffet.Data.Side;
+            if (side != null) {
+                <div class="orderitem">
+                    <p class="lead">@item.ToString()</p>
+                    <p>Price: $@item.Price</p>
+                    <p>Calories: @item.Calories</p>
+                    <p>Description: @item.Description</p>
+                </div>
+            }
+        }
+    </div>
+    <div>
+        <h1>Drinks</h1>
+        @foreach (BleakwindBuffet.Data.IOrderItem item in Model.OrderItems) {
+            var drink = item as BleakwindBuffet.Data.Drinks.Drink;
+            if (drink != null) {
+                <div class="orderitem">
+                    <p class="lead">@item.ToString()</p>
+                    <p>Price: $@item.Price</p>
+                    <p>Calories: @item.Calories</p>
+                    <p>Description: @item.Description</p>
+                </div>
+            }
+        }
+    </div>
+
+
+
+
 
 
 

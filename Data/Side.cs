@@ -21,5 +21,6 @@ namespace BleakwindBuffet.Data {
         /// Size of side
         /// </summary>
         public virtual Size Size { get; set; }
+        public abstract string Description { get; }
     }
 }

@@ -80,12 +80,14 @@ namespace BleakwindBuffet.Data.Entrees {
             }
         }
         public string FoodType { get; }
+        public override string Description { get; }
         
 
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
         public GardenOrcOmlette() {
+            Description = "Vegetarian. Two egg omelette packed with a mix of broccoli, mushrooms, and tomatoes. Topped with cheddar cheese.";
             FoodType = "Entree";
             SpecialInstructions = new List<String>();
             Price = 4.57;

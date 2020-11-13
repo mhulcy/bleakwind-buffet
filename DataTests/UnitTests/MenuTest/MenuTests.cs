@@ -214,5 +214,42 @@ namespace BleakwindBuffet.DataTests.UnitTests.MenuTest {
                 Assert.InRange((int)item.Calories, 0, 400);
             }
         }
+        [Fact]
+        public void DescriptionForItemsShouldBeCorrect() {
+            var item = new BriarheartBurger();
+            Assert.Equal("Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.", item.Description);
+            var item2 = new DoubleDraugr();
+            Assert.Equal("Double patty burger on a brioche bun. Comes with ketchup, mustard, pickle, cheese, tomato, lettuce, and mayo.", item2.Description);
+            var item3 = new ThalmorTriple();
+            Assert.Equal("Think you are strong enough to take on the Thalmor? Inlcudes two 1/4lb patties with a 1/2lb patty inbetween with ketchup, mustard, pickle, cheese, tomato, lettuce, mayo, bacon, and an egg.", item3.Description);
+            var item4 = new SmokehouseSkeleton();
+            Assert.Equal("Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.", item4.Description);
+            var item5 = new GardenOrcOmlette();
+            Assert.Equal("Vegetarian. Two egg omelette packed with a mix of broccoli, mushrooms, and tomatoes. Topped with cheddar cheese.", item5.Description);
+            var item6 = new PhillyPoacher();
+            Assert.Equal("Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.", item6.Description);
+            var item7 = new ThugsTBone();
+            Assert.Equal("Juicy T-Bone, not much else to say.", item7.Description);
+            var item8 = new VolkunSalad();
+            Assert.Equal("A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges.", item8.Description);
+            var item9 = new FriedMiraak();
+            Assert.Equal("Perfectly prepared hash brown pancakes.", item9.Description);
+            var item10 = new MadOtarGrits();
+            Assert.Equal("Cheesey Grits.", item10.Description);
+            var item11 = new DragonbornWaffleFries();
+            Assert.Equal("Crispy fried potato waffle fries.", item11.Description);
+            var item12 = new SailorSoda(); 
+            Assert.Equal("An old-fashioned jerked soda, carbonated water and flavored syrup poured over a bed of crushed ice.", item12.Description);
+            var item13 = new MarkarthMilk();
+            Assert.Equal("Hormone-free organic 2% milk.", item13.Description);
+            var item14 = new AretinoAppleJuice();
+            Assert.Equal("Fresh squeezed apple juice.", item14.Description);
+            var item15 = new CandlehearthCoffee();
+            Assert.Equal("Fair trade, fresh ground dark roast coffee.", item15.Description);
+            var item16 = new WarriorWater();
+            Assert.Equal("It’s water. Just water.", item16.Description);
+
+
+        }
     }
 }

@@ -22,5 +22,6 @@ namespace BleakwindBuffet.Data.Drinks {
         /// </summary>
         public virtual Size Size { get; set; }
 
+        public abstract string Description { get; }
     }
 }

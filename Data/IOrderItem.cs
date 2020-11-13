@@ -22,6 +22,8 @@ namespace BleakwindBuffet.Data {
 
         string FoodType { get; }
 
+        string Description { get; }
+
         event PropertyChangedEventHandler PropertyChanged;
     }
 }

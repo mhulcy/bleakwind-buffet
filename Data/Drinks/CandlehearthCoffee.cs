@@ -94,11 +94,13 @@ namespace BleakwindBuffet.Data.Drinks {
         public override List<String> SpecialInstructions { get; }
 
         public string FoodType { get; }
+        public override string  Description { get; }
 
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
         public CandlehearthCoffee() {
+            Description = "Fair trade, fresh ground dark roast coffee.";
             FoodType = "Drink";
             SpecialInstructions = new List<String>();
             Price = 1.05;
@@ -113,6 +115,7 @@ namespace BleakwindBuffet.Data.Drinks {
         /// </summary>
         /// <param name="inpsize">input size</param>
         public CandlehearthCoffee(Size inpsize) {
+            Description = "Fair trade, fresh ground dark roast coffee.";
             FoodType = "Drink";
             SpecialInstructions = new List<String>();
             Price = 1.05;

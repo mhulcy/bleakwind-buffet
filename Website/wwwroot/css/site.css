@@ -114,3 +114,15 @@ body {
 .orderitem {
     border: 1px solid #dee2e6;
 }
+
+
+.flex-columns {
+    display: flex;
+    flex-direction: row;
+}
+
+@media(max-width: 490px) {
+    .flex-columns {
+        flex-direction: column;
+    }
+}

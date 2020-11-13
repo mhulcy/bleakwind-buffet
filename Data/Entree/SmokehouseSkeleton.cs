@@ -74,10 +74,12 @@ namespace BleakwindBuffet.Data.Entrees {
             }
         }
         public string FoodType { get; }
+        public override string Description { get; }
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
         public SmokehouseSkeleton() {
+            Description = "Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.";
             FoodType = "Entree";
             SpecialInstructions = new List<String>();
             Price = 5.62;

@@ -66,10 +66,12 @@ namespace BleakwindBuffet.Data.Entrees {
         }
       
         public string FoodType { get; }
+        public override string Description { get; }
         /// <summary>
         /// constructor to setup defualt values
         /// </summary>
         public PhillyPoacher() {
+            Description = "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.";
             FoodType = "Entree";
             SpecialInstructions = new List<String>();
             Price = 7.23;

@@ -34,12 +34,46 @@ namespace Website.Pages {
         
 
         public void OnGet(string SearchTerms, string[] FoodTypes, double ?PriceMin, double ?PriceMax, double ?CaloriesMin, double ?CaloriesMax) {                            //string SearchTerms, string[] FoodTypes, double PriceMin, double PriceMax, double CaloriesMin, double CaloriesMax
+            OrderItems = Menu.FullMenu();
             
-            OrderItems = Menu.Search(SearchTerms);
-            OrderItems = Menu.FilterByFoodType(OrderItems, FoodTypes);
-            
-            OrderItems = Menu.FilterByPrice(OrderItems, PriceMin, PriceMax);
-            OrderItems = Menu.FilterByCalories(OrderItems, CaloriesMin, CaloriesMax);
+            // Search movie titles for the SearchTerms
+            if (SearchTerms != null) {
+                OrderItems = OrderItems.Where(item => item.ToString() != null && item.ToString().Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase));
+            }
+            // Filter by FoodType
+            if (FoodTypes != null && FoodTypes.Length != 0) {
+                OrderItems = OrderItems.Where(item =>
+                    item.FoodType != null &&
+                    FoodTypes.Contains(item.FoodType)
+                    );
+            }
+            // Filter by Price
+            if (PriceMin != null || PriceMax != null) {
+                if (PriceMin == null) {
+                    OrderItems = OrderItems.Where(item => item.Price <= PriceMax);
+                }
+                else if (PriceMax == null) {
+                    OrderItems = OrderItems.Where(item => item.Price >= PriceMin);
+                }
+                else {
+                    OrderItems = OrderItems.Where(item => item.Price <= PriceMax);
+                    OrderItems = OrderItems.Where(item => item.Price >= PriceMin);
+                }
+            }
+            // Filter by Calories
+            if (CaloriesMin != null || CaloriesMax != null) {
+                if (CaloriesMin == null) {
+                    OrderItems = OrderItems.Where(item => item.Calories <= CaloriesMax);
+                }
+                else if (PriceMax == null) {
+                    OrderItems = OrderItems.Where(item => item.Calories >= CaloriesMin);
+                }
+                else {
+                    OrderItems = OrderItems.Where(item => item.Calories <= CaloriesMax);
+                    OrderItems = OrderItems.Where(item => item.Calories >= CaloriesMin);
+                }
+            }
+
 
         }
     }

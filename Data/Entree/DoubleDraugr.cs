@@ -135,12 +135,14 @@ namespace BleakwindBuffet.Data.Entrees {
             }
         }
         public string FoodType { get; }
+        public override string Description { get; }
         
         /// <summary>
         /// Constructor for doubleDraugr
         /// Sets up the defualt values
         /// </summary>
         public DoubleDraugr() {
+            Description = "Double patty burger on a brioche bun. Comes with ketchup, mustard, pickle, cheese, tomato, lettuce, and mayo.";
             FoodType = "Entree";
             SpecialInstructions = new List<String>();
             Price = 7.32;

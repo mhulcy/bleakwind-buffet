@@ -126,6 +126,7 @@ namespace BleakwindBuffet.Data {
             }
         }
         public string FoodType { get; }
+        public string Description { get; }
 
         public Combo(Drink d, Side s, Entree e) {
             FoodType = "Combo";
